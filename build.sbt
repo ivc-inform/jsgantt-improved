@@ -4,7 +4,8 @@ lazy val root = project.in(file("."))
   .enablePlugins(ScalaJSPlugin)
   .settings(
       libraryDependencies ++= Seq(
-          "org.scala-js" %%% "scalajs-dom" % "0.9.4-SNAPSHOT"
+          "org.scala-js" %%% "scalajs-dom" % "0.9.4-SNAPSHOT",
+          "com.lihaoyi" %% "scalatags" % "0.6.7"
       )
   )
 
