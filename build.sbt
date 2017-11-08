@@ -2,6 +2,11 @@ import org.scalajs.sbtplugin.ScalaJSPlugin
 
 lazy val root = project.in(file("."))
   .enablePlugins(ScalaJSPlugin)
+  .settings(
+      libraryDependencies ++= Seq(
+          "org.scala-js" %%% "scalajs-dom" % "0.9.4-SNAPSHOT"
+      )
+  )
 
 name := "jsgantt-improved-scalajs"
 
@@ -17,8 +22,10 @@ val commonSettings = Seq(
 commonSettings
 
 scalacOptions ++= {
-    if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault")
-    else Nil
+    if (scalaJSVersion.startsWith("0.6."))
+        Seq("-P:scalajs:sjsDefinedByDefault")
+    else
+        Nil
 }
 
 publishMavenStyle := true
