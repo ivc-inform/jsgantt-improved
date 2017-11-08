@@ -6,7 +6,10 @@ lazy val root = project.in(file("."))
       libraryDependencies ++= Seq(
           "org.scala-js" %%% "scalajs-dom" % "0.9.4-SNAPSHOT",
           "com.lihaoyi" %% "scalatags" % "0.6.7"
-      )
+      ),
+      crossTarget in fastOptJS := (sourceDirectory in Compile).value / "javascriptJS" ,
+      crossTarget in fullOptJS := (sourceDirectory in Compile).value / "javascriptJS" ,
+      crossTarget in packageJSDependencies := (sourceDirectory in Compile).value / "javascriptJS"
   )
 
 name := "jsgantt-improved-scalajs"
