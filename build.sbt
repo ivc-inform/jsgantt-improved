@@ -2,8 +2,6 @@ import org.scalajs.sbtplugin.ScalaJSPlugin
 
 lazy val root = project.in(file("."))
   .enablePlugins(ScalaJSPlugin)
-  .dependsOn(example)
-  .aggregate(example)
 
 name := "jsgantt-improved-scalajs"
 
@@ -34,7 +32,4 @@ publishTo := {
 }
 credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
 
-lazy val example = project.
-  enablePlugins(ScalaJSPlugin).
-  settings(commonSettings: _*)
 
