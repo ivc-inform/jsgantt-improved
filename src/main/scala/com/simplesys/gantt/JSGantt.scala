@@ -16,6 +16,7 @@ object GanttChart extends js.Object {
     implicit def alig2Str(value: Alignment): String = value.toString
     implicit def format2Str(value: Format): String = value.toString
     implicit def captiontp2Str(value: CaptionType): String = value.toString
+    implicit def captiontp2Strs(value: CaptionType*): Seq[String] = value.map(_.toString)
     implicit def dateInpur2Str(value: DateInputFormat): String = value.toString
 
     val langRus = js.Dictionary(
@@ -190,7 +191,7 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       * Defaults to all valid values.
       **/
 
-    def setFormatArr(value: String): Unit = js.native
+    def setFormatArr(value: String *): Unit = js.native
 
     /**
       * Controls which task field to use as a caption on the Gantt Chart task bar, accepts a single parameter.
@@ -296,6 +297,9 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
 
     //Date format used for Gantt Chart major date headings displayed in "Day" format. Defaults to "dd/mm/yyyy".
     def setDayMajorDateDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for Gantt Chart major date headings displayed in "Day" format. Defaults to "dd/mm".
+    def setWeekMinorDateDisplayFormat(value: String): Unit = js.native
 
     //Date format used for Gantt Chart major date headings displayed in "Week" format. Defaults to "yyyy".
     def setWeekMajorDateDisplayFormat(value: String): Unit = js.native
