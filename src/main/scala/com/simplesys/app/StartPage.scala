@@ -14,12 +14,12 @@ object GanttImprovedTest {
         val div = dom.document.getElementById("GanttChartDIV")
 
         val g = new GanttChartExt(div, Format.day)
-        g.addLang("rus", GanttChart.langRus)
-        g setLang "rus"
-        
+        /*g.addLang("rus", GanttChart.langRus)
+        g setLang "rus"*/
+
         g.getDivId.foreach {
             _ ⇒
-                g setCaptionType CaptionType.Caption
+                g setCaptionType CaptionType.Complete
                 g setQuarterColWidth 36
                 g setDateTaskDisplayFormat "day dd month yyyy"
                 g setDayMajorDateDisplayFormat "mon yyyy - Week ww"
@@ -29,8 +29,8 @@ object GanttImprovedTest {
                 g setUseSingleCell 10000
                 g setFormatArr(Format.hour, Format.day, Format.week, Format.month, Format.quarter)
 
-                // g.AddTaskItem(new JSGantt.TaskItem(1, 'Define Chart API', '', '', 'ggroupblack', '', 0, 'Brian', 0, 1, 0, 1, '', '', 'Some Notes text', g));
-                g.AddTaskItem(new TaskItemExt(pID = 1, pName = "Define Chart API", pClass = "ggroupblack", pRes = "Brian", pGroup = Group.standardGroupTask, pNotes = "Some Notes text", pGantt = g))
+                g.AddTaskItem(new TaskItem(1, "Define Chart API", "", "", "ggroupblack", "", 0, "Brian", 0, 1, 0, 1, "", "", "Some Notes text", g))
+                g.AddTaskItem(new TaskItem(11, "Chart Object", "2016-02-20", "2016-02-20", "gmilestone", "", 1, "Shlomy", 100, 0, 1, 1, "", "", "", g))
                 g.Draw()
         }
 

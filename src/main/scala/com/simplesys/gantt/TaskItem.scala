@@ -48,7 +48,7 @@ object TaskItem {
 
 @js.native
 @JSGlobal("JSGantt.TaskItem")
-protected class TaskItem(
+class TaskItem(
                           val pID: Int,
                           val pName: String,
                           val pStart: String,
