@@ -11,12 +11,82 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
 import scala.language.implicitConversions
 
-object GanttChart {
+object GanttChart extends js.Object {
     implicit def enabling2Int(value: Enabling): Int = if (value == Enabling.enable) 1 else 0
     implicit def alig2Str(value: Alignment): String = value.toString
     implicit def format2Str(value: Format): String = value.toString
     implicit def captiontp2Str(value: CaptionType): String = value.toString
     implicit def dateInpur2Str(value: DateInputFormat): String = value.toString
+
+    val langRus = js.Dictionary(
+        "format" → "Format",
+        "hour" → "Hour",
+        "day" → "Day",
+        "week" → "Week",
+        "month" → "Month",
+        "quarter" → "Quarter",
+        "hours" → "Hours",
+        "days" → "Days",
+        "weeks" → "Weeks",
+        "months" → "Months",
+        "quarters" → "Quarters",
+        "hr" → "Hr",
+        "dy" → "Day",
+        "wk" → "Wk",
+        "mth" → "Mth",
+        "qtr" → "Qtr",
+        "hrs" → "Hrs",
+        "dys" → "Days",
+        "wks" → "Wks",
+        "mths" → "Mths",
+        "qtrs" → "Qtrs",
+        "resource" → "Resource",
+        "duration" → "Duration",
+        "comp" → "% Comp.",
+        "completion" → "Completion",
+        "startdate" → "Start Date",
+        "enddate" → "End Date",
+        "moreinfo" → "More Information",
+        "notes" → "Notes",
+        "january" → "January",
+        "february" → "February",
+        "march" → "March",
+        "april" → "April",
+        "maylong" → "May",
+        "june" → "June",
+        "july" → "July",
+        "august" → "August",
+        "september" → "September",
+        "october" → "October",
+        "november" → "November",
+        "december" → "December",
+        "jan" → "Jan",
+        "feb" → "Feb",
+        "mar" → "Mar",
+        "apr" → "Apr",
+        "may" → "May",
+        "jun" → "Jun",
+        "jul" → "Jul",
+        "aug" → "Aug",
+        "sep" → "Sep",
+        "oct" → "Oct",
+        "nov" → "Nov",
+        "dec" → "Dec",
+        "sunday" → "Sunday",
+        "monday" → "Monday",
+        "tuesday" → "Tuesday",
+        "wednesday" → "Wednesday",
+        "thursday" → "Thursday",
+        "friday" → "Friday",
+        "saturday" → "Saturday",
+        "sun" → "Sun",
+        "mon" → "Mon",
+        "tue" → "Tue",
+        "wed" → "Wed",
+        "thu" → "Thu",
+        "fri" → "Fri",
+        "sat" → "Sat"
+    )
 }
 
 @js.native
@@ -179,7 +249,7 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
     //Height of Gantt Chart rows in pixels. Used to route dependency lines near end points. Defaults to 20.
     def setRowHeight(value: Int): Unit = js.native
 
-    //Group tasks have their task bars embellished with end points, this value specifies the width of one of these end points in pixels. A short task bar's length will be rounded up to display either a single or both endpoints correctly. Defaults to 8.
+    //Group tasks have their task bars embellished with end points, this value specifies the width of one of these end points in pixels. A short task bar"s length will be rounded up to display either a single or both endpoints correctly. Defaults to 8.
     def setMinGpLen(value: Int): Unit = js.native
 
     /**
@@ -210,43 +280,43 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       * w:	ISO Week number (1-53)
       * ww:	ISO Week number (01-53)
       * week:	Full ISO Week date format
-      * separated by one of the following characters: "/\-.,'<space>:
+      * separated by one of the following characters: "/\-.,"<space>:
       **/
 
-    //Date format used for start and end dates in the main task list. Defaults to 'dd/mm/yyyy'.
+    //Date format used for start and end dates in the main task list. Defaults to "dd/mm/yyyy".
     def setDateTaskTableDisplayFormat(value: String): Unit = js.native
 
-    //Date format used for start and end dates in task tool tips. Defaults to 'dd month yyyy'.
+    //Date format used for start and end dates in task tool tips. Defaults to "dd month yyyy".
     def setDateTaskDisplayFormat(value: String): Unit = js.native
 
-    //Date format used for Gantt Chart major date headings displayed in "Hour" format. Defaults to 'day dd month yyyy'.
+    //Date format used for Gantt Chart major date headings displayed in "Hour" format. Defaults to "day dd month yyyy".
     def setHourMajorDateDisplayFormat(value: String): Unit = js.native
 
-    //Date format used for Gantt Chart major date headings displayed in "Day" format. Defaults to 'dd/mm/yyyy'.
+    //Date format used for Gantt Chart major date headings displayed in "Day" format. Defaults to "dd/mm/yyyy".
     def setDayMajorDateDisplayFormat(value: String): Unit = js.native
 
-    //Date format used for Gantt Chart major date headings displayed in "Week" format. Defaults to 'yyyy'.
+    //Date format used for Gantt Chart major date headings displayed in "Week" format. Defaults to "yyyy".
     def setWeekMajorDateDisplayFormat(value: String): Unit = js.native
 
-    //Date format used for Gantt Chart major date headings displayed in "Month" format. Defaults to 'yyyy'.
+    //Date format used for Gantt Chart major date headings displayed in "Month" format. Defaults to "yyyy".
     def setMonthMajorDateDisplayFormat(value: String): Unit = js.native
 
-    //Date format used for Gantt Chart major date headings displayed in "Year" format. Defaults to 'yyyy'.
+    //Date format used for Gantt Chart major date headings displayed in "Year" format. Defaults to "yyyy".
     def setQuarterMajorDateDisplayFormat(value: String): Unit = js.native
 
-    //Date format used for Gantt Chart minor date headings displayed in "Hour" format. Defaults to 'HH'.
+    //Date format used for Gantt Chart minor date headings displayed in "Hour" format. Defaults to "HH".
     def setHourMinorDateDisplayFormat(value: String): Unit = js.native
 
-    //Date format used for Gantt Chart minor date headings displayed in "Day" format. Defaults to 'dd'.
+    //Date format used for Gantt Chart minor date headings displayed in "Day" format. Defaults to "dd".
     def setDayMinorDateDisplayFormat(value: String): Unit = js.native
 
-    //Date format used for Gantt Chart minor date headings displayed in "Week" format. Defaults to 'dd/mm'.
+    //Date format used for Gantt Chart minor date headings displayed in "Week" format. Defaults to "dd/mm".
     def setWeekMinjorDateDisplayFormat(value: String): Unit = js.native
 
-    //Date format used for Gantt Chart minor date headings displayed in "Month" format. Defaults to 'mon'.
+    //Date format used for Gantt Chart minor date headings displayed in "Month" format. Defaults to "mon".
     def setMonthMinorDateDisplayFormat(value: String): Unit = js.native
 
-    //Date format used for Gantt Chart minor date headings displayed in "Year" format. Defaults to 'qq'.
+    //Date format used for Gantt Chart minor date headings displayed in "Year" format. Defaults to "qq".
     def setQuarterMinorDateDisplayFormat(value: String): Unit = js.native
 }
 
