@@ -212,6 +212,42 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       * week:	Full ISO Week date format
       * separated by one of the following characters: "/\-.,'<space>:
       **/
+
+    //Date format used for start and end dates in the main task list. Defaults to 'dd/mm/yyyy'.
+    def setDateTaskTableDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for start and end dates in task tool tips. Defaults to 'dd month yyyy'.
+    def setDateTaskDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for Gantt Chart major date headings displayed in "Hour" format. Defaults to 'day dd month yyyy'.
+    def setHourMajorDateDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for Gantt Chart major date headings displayed in "Day" format. Defaults to 'dd/mm/yyyy'.
+    def setDayMajorDateDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for Gantt Chart major date headings displayed in "Week" format. Defaults to 'yyyy'.
+    def setWeekMajorDateDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for Gantt Chart major date headings displayed in "Month" format. Defaults to 'yyyy'.
+    def setMonthMajorDateDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for Gantt Chart major date headings displayed in "Year" format. Defaults to 'yyyy'.
+    def setQuarterMajorDateDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for Gantt Chart minor date headings displayed in "Hour" format. Defaults to 'HH'.
+    def setHourMinorDateDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for Gantt Chart minor date headings displayed in "Day" format. Defaults to 'dd'.
+    def setDayMinorDateDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for Gantt Chart minor date headings displayed in "Week" format. Defaults to 'dd/mm'.
+    def setWeekMinjorDateDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for Gantt Chart minor date headings displayed in "Month" format. Defaults to 'mon'.
+    def setMonthMinorDateDisplayFormat(value: String): Unit = js.native
+
+    //Date format used for Gantt Chart minor date headings displayed in "Year" format. Defaults to 'qq'.
+    def setQuarterMinorDateDisplayFormat(value: String): Unit = js.native
 }
 
 class GanttChartExt(pDiv: Element, pFormat: Format) extends GanttChart(pDiv, pFormat.toString) {
