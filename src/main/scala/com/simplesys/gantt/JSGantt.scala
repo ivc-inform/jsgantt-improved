@@ -43,7 +43,7 @@ object GanttChart extends js.Object {
         "qtrs" → "Кварталов",
         "resource" → "Ресурс",
         "duration" → "Продолжительность",
-        "comp" → "% Comp.",
+        "comp" → "% Выполн.",
         "completion" → "Общая",
         "startdate" → "Начало",
         "enddate" → "Конец",
@@ -326,6 +326,8 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
     def setQuarterMinorDateDisplayFormat(value: String): Unit = js.native
 
     def AddTaskItem(taskItem: TaskItem): Unit = js.native
+
+    def Draw(): Unit = js.native
 }
 
 class GanttChartExt(pDiv: Element, pFormat: Format) extends GanttChart(pDiv, pFormat.toString) {
