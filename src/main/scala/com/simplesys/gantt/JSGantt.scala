@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.JSGlobal
 
 @js.native
 @JSGlobal("JSGantt.GanttChart")
-class GanttChart(val pDiv: Element, val pFormat: String) extends js.Object {
+protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Object {
     def getDivId(): js.UndefOr[String] = js.native
 }
 
