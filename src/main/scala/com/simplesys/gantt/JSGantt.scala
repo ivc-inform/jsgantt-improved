@@ -140,6 +140,26 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       **/
 
     def setScrollTo(value: String): Unit = js.native
+
+    /**
+      * Sets the threshold total number of cells at which the task list will use a single table cell for each row rather than one cell per period. Useful to improve performance on large charts.
+      * A value of 0 disables this functionality (always use multiple cells), defaults to 25000
+      **/
+    def setUseSingleCell(value: Int): Unit = js.native
+
+    /**
+      * Sets translation to use when drawing the chart. Defaults to "en" as this is the only language provided in the base installation (see internationalization below for details on how to add more translations.)
+      **/
+    def setLang(value: String): Unit = js.native
+
+    /**
+      * Layout
+      * =======
+      * 
+      * Most of the look and feel of the Gantt Chart can be controlled using CSS however, as the length of a task bar is determined by column width, the following methods take a single numeric parameter that defines the appropriate column width in pixels.
+      * *
+      * Note that the task bar sizing code assumes the use of collapsed table borders 1px wide.
+      **/
 }
 
 class GanttChartExt(pDiv: Element, pFormat: Format) extends GanttChart(pDiv, pFormat.toString) {
