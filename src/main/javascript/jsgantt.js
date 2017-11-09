@@ -450,10 +450,32 @@ JSGantt.GanttChart = function (pDiv, pFormat) {
     var vLangs = {
         'en':
             {
-                'format'    : 'Format', 'hour': 'Hour', 'day': 'Day', 'week': 'Week', 'month': 'Month', 'quarter': 'Quarter', 'hours': 'Hours', 'days': 'Days',
-                'weeks'     : 'Weeks', 'months': 'Months', 'quarters': 'Quarters', 'hr': 'Hr', 'dy': 'Day', 'wk': 'Wk', 'mth': 'Mth', 'qtr': 'Qtr', 'hrs': 'Hrs',
-                'dys'       : 'Days', 'wks': 'Wks', 'mths': 'Mths', 'qtrs': 'Qtrs', 'resource': 'Resource', 'duration': 'Duration', 'comp': '% Comp.',
-                'completion': 'Completion', 'startdate': 'Start Date', 'enddate': 'End Date', 'moreinfo': 'More Information', 'notes': 'Notes',
+                'format'    : 'Format',
+                'hour'      : 'Hour',
+                'day'       : 'Day',
+                'week'      : 'Week',
+                'month'     : 'Month',
+                'quarter'   : 'Quarter',
+                'hours'     : 'Hours',
+                'days'      : 'Days',
+                'weeks'     : 'Weeks',
+                'months'    : 'Months',
+                'quarters'  : 'Quarters',
+                'hr'        : 'Hr',
+                'dy'        : 'Day',
+                'wk'        : 'Wk',
+                'mth'       : 'Mth',
+                'qtr'       : 'Qtr',
+                'hrs'       : 'Hrs',
+                'dys'       : 'Days',
+                'wks'       : 'Wks',
+                'mths'      : 'Mths',
+                'qtrs'      : 'Qtrs',
+                'resource'  : 'Resource',
+                'duration'  : 'Duration',
+                'comp'      : '% Comp.',
+                'completion': 'Completion',
+                'startdate' : 'Start Date', 'enddate': 'End Date', 'moreinfo': 'More Information', 'notes': 'Notes',
                 'january'   : 'January', 'february': 'February', 'march': 'March', 'april': 'April', 'maylong': 'May', 'june': 'June', 'july': 'July',
                 'august'    : 'August', 'september': 'September', 'october': 'October', 'november': 'November', 'december': 'December', 'jan': 'Jan',
                 'feb'       : 'Feb', 'mar': 'Mar', 'apr': 'Apr', 'may': 'May', 'jun': 'Jun', 'jul': 'Jul', 'aug': 'Aug', 'sep': 'Sep', 'oct': 'Oct', 'nov': 'Nov',
@@ -1624,7 +1646,7 @@ JSGantt.GanttChart = function (pDiv, pFormat) {
     //<editor-fold desc="Fixed by Y.Andrew">
     return JSGantt;
     //</editor-fold>
-    
+
 }; //GanttChart
 
 JSGantt.updateFlyingObj = function (e, pGanttChartObj, pTimer) {
