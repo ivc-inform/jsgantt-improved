@@ -1,9 +1,8 @@
 package com.simplesys.app
 
-import com.simplesys.gantt.{Format, JSGantt, JSGanttStatic}
+import com.simplesys.gantt.{Format, GanttChartExt}
 import org.scalajs.dom
 
-import scala.scalajs.js
 import scala.scalajs.js.annotation.JSExportTopLevel
 import scalatags.Text.all._
 
@@ -11,12 +10,11 @@ object GanttImprovedTest {
     @JSExportTopLevel("GanttImprovedTest")
     def get() = {
         val div = dom.document.getElementById("GanttChartDIV")
-        val g = (new JSGantt).GanttChart(div, Format.day)
 
-        if (g.getDivId.isEmpty)
-            println(s"getDivId is Empty")
+        val g = new GanttChartExt(div, Format.day)
 
-        val textExample = h1("Header 1")
+        val a = g.getDivId
+        val textExample = h1(s"getDivId: $a")
         div.innerHTML = textExample.render
     }
 }

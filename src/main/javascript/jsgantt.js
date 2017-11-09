@@ -1391,10 +1391,6 @@ JSGantt.GanttChart=function(pDiv, pFormat)
 		return vTask;
 	};
 	if (vDiv && vDiv.nodeName.toLowerCase()=='div') vDivId=vDiv.id;
-	
-    //<editor-fold desc="Fixed by Y.Andrew">
-    return JSGantt;
-    //</editor-fold>
 }; //GanttChart
 
 JSGantt.updateFlyingObj=function (e, pGanttChartObj, pTimer) {

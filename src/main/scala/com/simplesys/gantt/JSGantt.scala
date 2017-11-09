@@ -4,12 +4,12 @@ import com.simplesys.gantt.Format.Format
 import org.scalajs.dom.raw._
 
 import scala.scalajs.js
-
-class JSGantt extends js.Object {
-    def GanttChart(pDiv: Element, pFormat: Format): JSGanttTrait = JSGanttStatic.GanttChart(pDiv, pFormat.toString)
-}
+import scala.scalajs.js.annotation.JSGlobal
 
 @js.native
-trait JSGanttTrait extends js.Object  {
-   def getDivId : js.UndefOr[String]
+@JSGlobal("JSGantt.GanttChart")
+class GanttChart(val pDiv: Element, val pFormat: String) extends js.Object {
+    def getDivId(): js.UndefOr[String] = js.native
 }
+
+class GanttChartExt(pDiv: Element, pFormat: Format) extends GanttChart(pDiv, pFormat.toString)
