@@ -1,6 +1,8 @@
 package com.simplesys.gantt
 
 import com.simplesys.gantt.Alignment.Alignment
+import com.simplesys.gantt.CaptionType.CaptionType
+import com.simplesys.gantt.DateInputFormat.DateInputFormat
 import com.simplesys.gantt.Enabling.Enabling
 import com.simplesys.gantt.Format.Format
 import org.scalajs.dom.raw._
@@ -12,6 +14,9 @@ import scala.language.implicitConversions
 object GanttChart {
     implicit def enabling2Int(value: Enabling): Int = if (value == Enabling.enable) 1 else 0
     implicit def alig2Str(value: Alignment): String = value.toString
+    implicit def format2Str(value: Format): String = value.toString
+    implicit def captiontp2Str(value: CaptionType): String = value.toString
+    implicit def dateInpur2Str(value: DateInputFormat): String = value.toString
 }
 
 @js.native
@@ -98,8 +103,43 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       *
       */
 
+
+    /**
+      * Controls where the format selector is displayed, accepts multiple parameters.
+      * Valid parameter values are "Top", "Bottom".
+      * Defaults to "Top".
+      */
+
     def setShowSelector(value: String): Unit = js.native
 
+    /**
+      * Controls which format options are shown in the format selector, accepts multiple parameters.
+      * Valid parameter values are "Hour", "Day", "Week", "Month", "Quarter".
+      * Defaults to all valid values.
+      **/
+
+    def setFormatArr(value: String): Unit = js.native
+
+    /**
+      * Controls which task field to use as a caption on the Gantt Chart task bar, accepts a single parameter.
+      * Valid parameter values are "None", "Caption", "Resource", "Duration", "Complete".
+      * Defaults to "None"
+      *
+      **/
+    def setCaptionType(value: String): Unit = js.native
+
+    /**
+      * Valid parameter values are "yyyy-mm-dd", "dd/mm/yyyy", "mm/dd/yyyy".
+      * Defaults to "yyyy-mm-dd"
+      **/
+    def setDateInputFormat(value: String): Unit = js.native
+
+    /**
+      * Sets the date the Gantt Chart will be scrolled to, specified in the date input format set by setDateInputFormat() above. Also accepts the special value "today"
+      * Defaults to minimum display date
+      **/
+
+    def setScrollTo(value: String): Unit = js.native
 }
 
 class GanttChartExt(pDiv: Element, pFormat: Format) extends GanttChart(pDiv, pFormat.toString) {
