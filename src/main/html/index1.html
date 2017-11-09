@@ -11,11 +11,12 @@
     <body>
         <div style="position:relative" class="gantt" id="GanttChartDIV"></div>
         <script>
+            var div = document.getElementById('GanttChartDIV')
+            var g = new JSGantt.GanttChart(div, 'hour')
+            
             GanttImprovedTest();
 
-            /*var div = document.getElementById('GanttChartDIV')
-            var g = new JSGantt.GanttChart(div, 'hour');
-
+            /*
             if (g.getDivId() != null) {
                 g.setCaptionType('Complete');
                 g.setQuarterColWidth(36);

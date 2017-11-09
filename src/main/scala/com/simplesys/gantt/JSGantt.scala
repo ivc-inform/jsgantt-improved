@@ -6,13 +6,20 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
 import org.scalajs.dom.raw._
 
+
 @js.native
-@JSGlobal
-class JSGantt extends js.Object {
+@JSGlobal("JSGantt")
+object JSGanttStatic extends js.Object {
 
     // function that loads the main gantt chart properties and functions
     // pDiv: (required) this is a div object created in HTML
     // pFormat: (required) - used to indicate whether chart should be drawn in "hour", "day", "week", "month", or "quarter" format
 
-    def GanttChart(pDiv: Element, pFormat: Format): JSGantt = js.native
+    def GanttChart(pDiv: Element, pFormat: String): JSGantt = js.native
+}
+
+trait JSGanttTrait extends js.Object
+
+class JSGantt extends js.Object {
+    def GanttChart(pDiv: Element, pFormat: Format): JSGantt = JSGanttStatic.GanttChart(pDiv, pFormat.toString)
 }
