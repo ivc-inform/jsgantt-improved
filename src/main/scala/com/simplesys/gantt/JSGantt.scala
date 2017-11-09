@@ -155,32 +155,63 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
     /**
       * Layout
       * =======
-      * 
+      *
       * Most of the look and feel of the Gantt Chart can be controlled using CSS however, as the length of a task bar is determined by column width, the following methods take a single numeric parameter that defines the appropriate column width in pixels.
       * *
       * Note that the task bar sizing code assumes the use of collapsed table borders 1px wide.
       **/
 
     //Width of Gantt Chart columns in pixels when drawn in "Hour" format. Defaults to 18.
-    def setHourColWidth(value:Int):Unit = js.native
+    def setHourColWidth(value: Int): Unit = js.native
 
     //Width of Gantt Chart columns in pixels when drawn in "Day" format. Defaults to 18.
-    def setDayColWidth(value:Int):Unit = js.native
+    def setDayColWidth(value: Int): Unit = js.native
 
     //Width of Gantt Chart columns in pixels when drawn in "Week" format. Defaults to 36.
-    def setWeekColWidth(value:Int):Unit = js.native
+    def setWeekColWidth(value: Int): Unit = js.native
 
     //Width of Gantt Chart columns in pixels when drawn in "Month" format. Defaults to 36.
-    def setMonthColWidth(value:Int):Unit = js.native
+    def setMonthColWidth(value: Int): Unit = js.native
 
     //Width of Gantt Chart columns in pixels when drawn in "Quarter" format, although not mandatory it is recommended that this be set to a value divisible by 3. Defaults to 18.
-    def setQuarterColWidth(value:Int):Unit = js.native
+    def setQuarterColWidth(value: Int): Unit = js.native
 
     //Height of Gantt Chart rows in pixels. Used to route dependency lines near end points. Defaults to 20.
-    def setRowHeight(value:Int):Unit = js.native
-    
+    def setRowHeight(value: Int): Unit = js.native
+
     //Group tasks have their task bars embellished with end points, this value specifies the width of one of these end points in pixels. A short task bar's length will be rounded up to display either a single or both endpoints correctly. Defaults to 8.
-    def setMinGpLen(value:Int):Unit = js.native
+    def setMinGpLen(value: Int): Unit = js.native
+
+    /**
+      * Display Date Formats
+      * ====================
+      * Date display formats can be individually controlled. The methods used to set these display formats each take a single format string parameter. The format string can be made up of the following components (case sensitive)
+      * *
+      * h:	Hour (1-12)
+      * hh:	Hour (01-12)
+      * pm:	am/pm indicator
+      * PM:	AM/PM indicator
+      * H:	Hour (0-23)
+      * HH:	Hour (01-23)
+      * mi:	Minutes (1-59)
+      * MI:	Minutes (01-59)
+      * d:	Day (1-31)
+      * dd:	Day (01-31)
+      * day:	Abbreviated day of week
+      * DAY:	Day of week
+      * m:	Month (1-12)
+      * mm:	Month (01-12)
+      * mon:	Abbreviated month text
+      * month:	Full month text
+      * yy:	Year, excluding century
+      * yyyy:	Year
+      * q:	Quarter (1-4)
+      * qq:	Quarter (Q1-Q4)
+      * w:	ISO Week number (1-53)
+      * ww:	ISO Week number (01-53)
+      * week:	Full ISO Week date format
+      * separated by one of the following characters: "/\-.,'<space>:
+      **/
 }
 
 class GanttChartExt(pDiv: Element, pFormat: Format) extends GanttChart(pDiv, pFormat.toString) {
