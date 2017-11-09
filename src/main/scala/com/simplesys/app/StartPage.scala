@@ -1,10 +1,9 @@
 package com.simplesys.app
 
-import com.simplesys.gantt.{Format, JSGantt, JSGanttStatic}
-
-import scala.scalajs.js.annotation.JSExportTopLevel
+import com.simplesys.gantt.{Format, JSGantt}
 import org.scalajs.dom
 
+import scala.scalajs.js.annotation.JSExportTopLevel
 import scalatags.Text.all._
 
 object GanttImprovedTest {
