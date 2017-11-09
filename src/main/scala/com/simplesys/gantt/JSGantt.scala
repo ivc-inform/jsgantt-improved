@@ -25,7 +25,8 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       * Many of the features of jsGanttImproved can be customised through the use of setter methods available on the GanttChart object returned by a call to JSGantt.GanttChart()
       * *
       * The following options take a single numeric parameter; a value of 1 will enable the describe functionality, 0 will disable it
-      **/
+      *
+      * */
 
     //Controls the display of tool tip boxes, defaults to 1 (enabled)
     def setUseToolTip(value: Int): Unit = js.native
