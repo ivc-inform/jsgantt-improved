@@ -2,11 +2,10 @@ package com.simplesys.app
 
 import scala.scalajs.js.annotation.JSExportTopLevel
 import org.scalajs.dom
+import scalatags.Text.all._
 
 
-class StartPage[Builder, Output <: FragT, FragT](val bundle: scalatags.generic.Bundle[Builder, Output, FragT]) {
-
-    import bundle.all._
+class StartPage {
 
     def getDiv = {
         h1("Header 1")
@@ -15,8 +14,8 @@ class StartPage[Builder, Output <: FragT, FragT](val bundle: scalatags.generic.B
 
 object GanttImprovedTest {
     @JSExportTopLevel("GanttImprovedTest")
-    def main(t1: String) = {
-        val textExample = new StartPage(scalatags.Text)
-        dom.document.getElementById(t1).innerHTML = textExample.getDiv.render
+    def main() = {
+        val textExample = new StartPage
+        dom.document.getElementById("GanttChartDIV").innerHTML = textExample.getDiv.render
     }
 }
