@@ -14,6 +14,9 @@ object GanttImprovedTest {
         val div = dom.document.getElementById("GanttChartDIV")
 
         val g = new GanttChartExt(div, Format.day)
+        g.addLang("rus", GanttChart.langRus)
+        g setLang "rus"
+        
         g.getDivId.foreach {
             _ ⇒
                 g setCaptionType CaptionType.Caption
