@@ -1,5 +1,6 @@
 package com.simplesys.gantt
 
+import com.simplesys.gantt.Alignment.Alignment
 import com.simplesys.gantt.Enabling.Enabling
 import com.simplesys.gantt.Format.Format
 import org.scalajs.dom.raw._
@@ -10,6 +11,7 @@ import scala.language.implicitConversions
 
 object GanttChart {
     implicit def enabling2Int(value: Enabling): Int = if (value == Enabling.enable) 1 else 0
+    implicit def alig2Str(value: Alignment): String = value.toString
 }
 
 @js.native
@@ -20,13 +22,16 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
 
 
     /**
+      * Switches
+      * =========
+      *
       * Configuration Options
       * Switches
       * Many of the features of jsGanttImproved can be customised through the use of setter methods available on the GanttChart object returned by a call to JSGantt.GanttChart()
       * *
       * The following options take a single numeric parameter; a value of 1 will enable the describe functionality, 0 will disable it
       *
-      * */
+      **/
 
     //Controls the display of tool tip boxes, defaults to 1 (enabled)
     def setUseToolTip(value: Int): Unit = js.native
@@ -84,6 +89,17 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
 
     //Controls display of dependancy lines, defaults to 1 (show dependencies)
     def setShowDeps(value: Int): Unit = js.native
+
+
+    /**
+      * Key Values
+      * ===========
+      * The following options enable functionality using a set of specific key values
+      *
+      */
+
+    def setShowSelector(value: String): Unit = js.native
+
 }
 
 class GanttChartExt(pDiv: Element, pFormat: Format) extends GanttChart(pDiv, pFormat.toString) {
