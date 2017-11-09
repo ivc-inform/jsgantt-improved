@@ -160,6 +160,27 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       * *
       * Note that the task bar sizing code assumes the use of collapsed table borders 1px wide.
       **/
+
+    //Width of Gantt Chart columns in pixels when drawn in "Hour" format. Defaults to 18.
+    def setHourColWidth(value:Int):Unit = js.native
+
+    //Width of Gantt Chart columns in pixels when drawn in "Day" format. Defaults to 18.
+    def setDayColWidth(value:Int):Unit = js.native
+
+    //Width of Gantt Chart columns in pixels when drawn in "Week" format. Defaults to 36.
+    def setWeekColWidth(value:Int):Unit = js.native
+
+    //Width of Gantt Chart columns in pixels when drawn in "Month" format. Defaults to 36.
+    def setMonthColWidth(value:Int):Unit = js.native
+
+    //Width of Gantt Chart columns in pixels when drawn in "Quarter" format, although not mandatory it is recommended that this be set to a value divisible by 3. Defaults to 18.
+    def setQuarterColWidth(value:Int):Unit = js.native
+
+    //Height of Gantt Chart rows in pixels. Used to route dependency lines near end points. Defaults to 20.
+    def setRowHeight(value:Int):Unit = js.native
+    
+    //Group tasks have their task bars embellished with end points, this value specifies the width of one of these end points in pixels. A short task bar's length will be rounded up to display either a single or both endpoints correctly. Defaults to 8.
+    def setMinGpLen(value:Int):Unit = js.native
 }
 
 class GanttChartExt(pDiv: Element, pFormat: Format) extends GanttChart(pDiv, pFormat.toString) {
