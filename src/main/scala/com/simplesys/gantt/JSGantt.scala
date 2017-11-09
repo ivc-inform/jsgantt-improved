@@ -11,5 +11,5 @@ class JSGantt extends js.Object {
 
 @js.native
 trait JSGanttTrait extends js.Object  {
-   def getDivId() : js.UndefOr[String]
+   def getDivId : js.UndefOr[String]
 }
