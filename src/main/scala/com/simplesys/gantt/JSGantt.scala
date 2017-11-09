@@ -93,6 +93,8 @@ object GanttChart extends js.Object {
 @JSGlobal("JSGantt.GanttChart")
 protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Object {
 
+    def addLang(pLang: String, pVals: js.Dictionary[String]): Unit = js.native
+
     def getDivId(): js.UndefOr[String] = js.native
 
 
