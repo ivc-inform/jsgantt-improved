@@ -24,7 +24,7 @@ object GanttImprovedTest {
                 g setShowTaskInfoLink 1
                 g setShowEndWeekDate 0
                 g setUseSingleCell 10000
-                g setFormatArr(Format.day, Format.week, Format.month, Format.quarter)
+                g setFormatArr(Format.hour, Format.day, Format.week, Format.month, Format.quarter)
 
                 // g.AddTaskItem(new JSGantt.TaskItem(1, 'Define Chart API', '', '', 'ggroupblack', '', 0, 'Brian', 0, 1, 0, 1, '', '', 'Some Notes text', g));
                 g.AddTaskItem(new TaskItemExt(pID = 1, pName = "Define Chart API", pClass = "ggroupblack", pRes = "Brian", pGroup = Group.standardGroupTask, pNotes = "Some Notes text", pGantt = g))
