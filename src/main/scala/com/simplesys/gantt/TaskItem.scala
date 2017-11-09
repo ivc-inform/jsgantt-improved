@@ -3,14 +3,16 @@ package com.simplesys.gantt
 import com.simplesys.gantt.Enabling.Enabling
 import com.simplesys.gantt.Group.Group
 import com.simplesys.gantt.MileStone.MileStone
+import com.simplesys.gantt.Opening.Opening
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
 import scala.language.implicitConversions
 
 object TaskItem {
-    implicit def mile2Int(value: MileStone): Int = if (value == MileStone.milestone) 1 else 0
+    implicit def mile2Int(value: MileStone): Int = value.id
     implicit def group2Int(value: Group): Int = value.id
+    implicit def open2Int(value: Opening): Int = value.id
 }
 
 /**
@@ -65,6 +67,7 @@ protected class TaskItem(
                           val pGantt: GanttChart
                         ) extends js.Object
 
+import TaskItem._
 class TaskItemExt(
                    pID: Int,
                    pName: String,
@@ -77,10 +80,10 @@ class TaskItemExt(
                    pComp: Int,
                    pGroup: Group = Group.normalTask,
                    pParent: Int = 0,
-                   pOpen: Int,
-                   pDepend: String,
-                   pCaption: String,
-                   pNotes: String,
+                   pOpen: Opening,
+                   pDepend: String = "",
+                   pCaption: String = "",
+                   pNotes: String = "",
                    pGantt: GanttChart
                  ) extends TaskItem(
     pID = pID,
@@ -93,5 +96,10 @@ class TaskItemExt(
     pRes = pRes,
     pComp = (if (pComp < 0 || pComp > 100) 0 else pComp),
     pGroup = pGroup,
-    pParent = pParent
+    pParent = pParent,
+    pOpen = pOpen,
+    pDepend = pDepend,
+    pCaption = pCaption,
+    pNotes = pNotes,
+    pGantt = pGantt
 )
