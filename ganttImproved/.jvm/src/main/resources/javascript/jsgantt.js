@@ -1427,7 +1427,9 @@ JSGantt.GanttChart = function (pDiv, pFormat) {
                     // Add Task Info div for tooltip
                     vTmpDiv2 = this.newNode(vTmpDiv, 'div', vDivId + 'tt' + vID, null, null, null, null, 'none');
                     vTmpDiv2.appendChild(this.createTaskInfo(vTaskList[i]));
-                    JSGantt.addTooltipListeners(this, vTaskList[i].getTaskDiv(), vTmpDiv2);
+                    //<editor-fold desc="Fixed by Y.Andrew">
+                    JSGantt.addTooltipListeners(this, vTaskList[i].getTaskDiv(), vTmpDiv2, vDiv);
+                    //</editor-fold>
                 }
             }
 
@@ -1694,7 +1696,7 @@ JSGantt.updateFlyingObj = function (e, pGanttChartObj, pTimer) {
     }
 };
 
-JSGantt.showToolTip = function (pGanttChartObj, e, pContents, pWidth, pTimer) {
+JSGantt.showToolTip = function (pGanttChartObj, e, pContents, pWidth, pTimer, vDiv) {
     var vTtDivId = pGanttChartObj.getDivId() + 'JSGanttToolTip';
     var vMaxW = 500;
     var vMaxAlpha = 100;
@@ -1710,7 +1712,9 @@ JSGantt.showToolTip = function (pGanttChartObj, e, pContents, pWidth, pTimer) {
             pGanttChartObj.vTool.vToolCont.className = 'JSGanttToolTipcont';
             pGanttChartObj.vTool.vToolCont.setAttribute('showing', '');
             pGanttChartObj.vTool.appendChild(pGanttChartObj.vTool.vToolCont);
-            document.body.appendChild(pGanttChartObj.vTool);
+            //<editor-fold desc="Fixed by Y.Andrew">
+            vDiv.appendChild(pGanttChartObj.vTool);
+            //</editor-fold>
             pGanttChartObj.vTool.style.opacity = 0;
             pGanttChartObj.vTool.setAttribute('currentOpacity', 0);
             pGanttChartObj.vTool.setAttribute('fadeIncrement', 10);
@@ -2689,9 +2693,11 @@ JSGantt.addListener = function (eventName, handler, control) {
     }
 };
 
-JSGantt.addTooltipListeners = function (pGanttChart, pObj1, pObj2) {
+JSGantt.addTooltipListeners = function (pGanttChart, pObj1, pObj2, vDiv) {
     JSGantt.addListener('mouseover', function (e) {
-        JSGantt.showToolTip(pGanttChart, e, pObj2, null, pGanttChart.getTimer());
+        //<editor-fold desc="Fixed by Y.Andrew">
+        JSGantt.showToolTip(pGanttChart, e, pObj2, null, pGanttChart.getTimer(), vDiv);
+        //</editor-fold>
     }, pObj1);
     JSGantt.addListener('mouseout', function (e) {
         JSGantt.delayedHide(pGanttChart, pGanttChart.vTool, pGanttChart.getTimer());
