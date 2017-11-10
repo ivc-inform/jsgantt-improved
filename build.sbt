@@ -2,19 +2,21 @@ import sbtcrossproject.{CrossType, crossProject}
 
 lazy val root = crossProject(JSPlatform, JVMPlatform)
   .settings(
-      scalaVersion in ThisBuild := "2.12.4",
-      publishMavenStyle := true,
-      publishTo := {
-          val corporateRepo = "http://toucan.simplesys.lan/"
-          if (isSnapshot.value)
-              Some("snapshots" at corporateRepo + "artifactory/libs-snapshot-local")
-          else
-              Some("releases" at corporateRepo + "artifactory/libs-release-local")
-      },
-      credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
-      name := "jsgantt-improved-scalajs",
-      version := "0.9.4-SNAPSHOT",
-      organization := "org.scala-js",
+      inThisBuild(Seq(
+          scalaVersion in ThisBuild := "2.12.4",
+          name := "jsgantt-improved-scalajs",
+          version := "0.9.4-SNAPSHOT",
+          organization := "org.scala-js",
+          publishMavenStyle := true,
+          publishTo := {
+              val corporateRepo = "http://toucan.simplesys.lan/"
+              if (isSnapshot.value)
+                  Some("snapshots" at corporateRepo + "artifactory/libs-snapshot-local")
+              else
+                  Some("releases" at corporateRepo + "artifactory/libs-release-local")
+          },
+          credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+      )),
       scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
   )
   .aggregate(ganttImproved)
@@ -45,6 +47,7 @@ lazy val ganttImproved = crossProject(JSPlatform, JVMPlatform)
 
 lazy val ganttImprovedJS = ganttImproved.js
 lazy val ganttImprovedJVM = ganttImproved.jvm
+
 
 
 
