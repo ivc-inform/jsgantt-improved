@@ -27,7 +27,7 @@ object CommonSettings {
         )
     }
 
-    val publishSettings = Seq(
+    val publishSettings = inThisBuild(Seq(
         publishTo := {
             val corporateRepo = "http://toucan.simplesys.lan/"
             val v = version.value
@@ -38,12 +38,12 @@ object CommonSettings {
                 Some("releases" at corporateRepo + "artifactory/libs-release-local")
         },
         credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
-    )
+    ))
 
-    val noPublishSettings = Seq(
+    val noPublishSettings = inThisBuild(Seq(
         publishArtifact := false,
         packagedArtifacts := Map.empty,
         publish := {},
         publishLocal := {}
-    )
+    ))
 }

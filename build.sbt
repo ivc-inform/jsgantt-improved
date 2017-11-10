@@ -14,7 +14,7 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
 
 lazy val ganttImproved = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
-  .settings(inThisBuild(CommonSettings.publishSettings))
+  .settings(CommonSettings.publishSettings)
   .settings(
       name := "jsgantt-improved",
   )
