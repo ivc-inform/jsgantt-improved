@@ -28,7 +28,7 @@ object CommonSettings {
     }
 
     val publishSettings = inThisBuild(Seq(
-        publishMavenStyle := false,
+        publishMavenStyle := true,
         publishTo := {
             val corporateRepo = "http://toucan.simplesys.lan/"
 
