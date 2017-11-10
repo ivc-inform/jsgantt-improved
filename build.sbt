@@ -3,11 +3,9 @@ import sbtcrossproject.{CrossType, crossProject}
 lazy val root = crossProject(JSPlatform, JVMPlatform)
   .settings(
       inThisBuild(Seq(
-          scalaVersion in ThisBuild := "2.12.4",
-          name := "jsgantt-improved-scalajs",
-          version := "0.9.4-SNAPSHOT",
-          organization := "org.scala-js",
-          publishMavenStyle := true,
+          scalaVersion := CommonSettings.settingValues.scalaVersion,
+          scalacOptions := CommonSettings.settingValues.scalacOptions,
+          organization := CommonSettings.settingValues.organization,
           publishTo := {
               val corporateRepo = "http://toucan.simplesys.lan/"
               if (isSnapshot.value)
@@ -16,16 +14,23 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
                   Some("releases" at corporateRepo + "artifactory/libs-release-local")
           },
           credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
-      )),
-      scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
+      )
+        ++ CommonSettings.defaultSettings),
+      publishArtifact in(Compile, packageBin) := false,
+      publishArtifact in(Compile, packageDoc) := false,
+      publishArtifact in(Compile, packageSrc) := false
   )
+  .settings(CommonSettings.noPublishSettings)
   .aggregate(ganttImproved)
   .dependsOn(ganttImproved)
 
 lazy val ganttImproved = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .settings(
+      name := "jsgantt-improved",
   )
+  .settings(CommonSettings.defaultSettings)
+  .settings(CommonSettings.publishSettings)
   .jvmSettings(
       // Add JVM-specific settings here
   )
