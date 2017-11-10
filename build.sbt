@@ -14,8 +14,7 @@ lazy val root = project.in(file("."))
 
 name := "jsgantt-improved-scalajs"
 
-crossScalaVersions in ThisBuild := Seq("2.12.4" /*, "2.11.11", "2.10.6", "2.13.0-M2"*/)
-scalaVersion in ThisBuild := crossScalaVersions.value.head
+scalaVersion in ThisBuild := "2.12.4"
 
 val commonSettings = Seq(
     version := "0.9.4-SNAPSHOT",
