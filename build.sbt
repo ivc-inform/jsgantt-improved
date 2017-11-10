@@ -1,25 +1,24 @@
 import sbtcrossproject.{CrossType, crossProject}
 
 lazy val root = crossProject(JSPlatform, JVMPlatform)
+  .settings(CommonSettings.noPublishSettings)
   .settings(
       inThisBuild(Seq(
           scalaVersion := CommonSettings.settingValues.scalaVersion,
           scalacOptions := CommonSettings.settingValues.scalacOptions,
           organization := CommonSettings.settingValues.organization
-      )
-        ++ CommonSettings.defaultSettings)
+      )++ CommonSettings.defaultSettings)
   )
-  .settings(CommonSettings.noPublishSettings)
   .aggregate(ganttImproved)
   .dependsOn(ganttImproved)
 
 lazy val ganttImproved = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
+  .settings(inThisBuild(CommonSettings.publishSettings))
   .settings(
       name := "jsgantt-improved",
   )
   .settings(CommonSettings.defaultSettings)
-  .settings(CommonSettings.publishSettings)
   .jvmSettings(
       // Add JVM-specific settings here
   )

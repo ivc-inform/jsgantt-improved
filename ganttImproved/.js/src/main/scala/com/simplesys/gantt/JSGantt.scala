@@ -106,7 +106,7 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       * Configuration Options
       * Switches
       * Many of the features of jsGanttImproved can be customised through the use of setter methods available on the GanttChart object returned by a call to JSGantt.GanttChart()
-      * *
+      * 
       * The following options take a single numeric parameter; a value of 1 will enable the describe functionality, 0 will disable it
       *
       **/
@@ -230,7 +230,7 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       * =======
       *
       * Most of the look and feel of the Gantt Chart can be controlled using CSS however, as the length of a task bar is determined by column width, the following methods take a single numeric parameter that defines the appropriate column width in pixels.
-      * *
+      *
       * Note that the task bar sizing code assumes the use of collapsed table borders 1px wide.
       **/
 
@@ -259,7 +259,7 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       * Display Date Formats
       * ====================
       * Date display formats can be individually controlled. The methods used to set these display formats each take a single format string parameter. The format string can be made up of the following components (case sensitive)
-      * 
+      *
       * h:	Hour (1-12)
       * hh:	Hour (01-12)
       * pm:	am/pm indicator

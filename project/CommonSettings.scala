@@ -28,11 +28,11 @@ object CommonSettings {
     }
 
     val publishSettings = Seq(
-        publishArtifact in Compile := true,
-        publishArtifact in Test := false,
         publishTo := {
             val corporateRepo = "http://toucan.simplesys.lan/"
-            if (isSnapshot.value)
+            val v = version.value
+
+            if (v.endsWith("-SNAPSHOT"))
                 Some("snapshots" at corporateRepo + "artifactory/libs-snapshot-local")
             else
                 Some("releases" at corporateRepo + "artifactory/libs-release-local")
