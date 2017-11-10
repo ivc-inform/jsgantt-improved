@@ -259,7 +259,7 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       * Display Date Formats
       * ====================
       * Date display formats can be individually controlled. The methods used to set these display formats each take a single format string parameter. The format string can be made up of the following components (case sensitive)
-      * *
+      * 
       * h:	Hour (1-12)
       * hh:	Hour (01-12)
       * pm:	am/pm indicator

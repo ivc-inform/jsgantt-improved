@@ -5,20 +5,9 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
       inThisBuild(Seq(
           scalaVersion := CommonSettings.settingValues.scalaVersion,
           scalacOptions := CommonSettings.settingValues.scalacOptions,
-          organization := CommonSettings.settingValues.organization,
-          publishTo := {
-              val corporateRepo = "http://toucan.simplesys.lan/"
-              if (isSnapshot.value)
-                  Some("snapshots" at corporateRepo + "artifactory/libs-snapshot-local")
-              else
-                  Some("releases" at corporateRepo + "artifactory/libs-release-local")
-          },
-          credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+          organization := CommonSettings.settingValues.organization
       )
-        ++ CommonSettings.defaultSettings),
-      publishArtifact in(Compile, packageBin) := false,
-      publishArtifact in(Compile, packageDoc) := false,
-      publishArtifact in(Compile, packageSrc) := false
+        ++ CommonSettings.defaultSettings)
   )
   .settings(CommonSettings.noPublishSettings)
   .aggregate(ganttImproved)
