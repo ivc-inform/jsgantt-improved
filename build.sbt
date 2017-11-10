@@ -15,10 +15,7 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
       name := "jsgantt-improved-scalajs",
       version := "0.9.4-SNAPSHOT",
       organization := "org.scala-js",
-      scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
-      crossTarget in fastOptJS := (sourceDirectory in Compile).value / "javascriptJS",
-      crossTarget in fullOptJS := (sourceDirectory in Compile).value / "javascriptJS",
-      crossTarget in packageJSDependencies := (sourceDirectory in Compile).value / "javascriptJS"
+      scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
   )
   .aggregate(ganttImproved)
   .dependsOn(ganttImproved)
@@ -31,6 +28,9 @@ lazy val ganttImproved = crossProject(JSPlatform, JVMPlatform)
       // Add JVM-specific settings here
   )
   .jsSettings(
+      crossTarget in fastOptJS := (sourceDirectory in Compile).value / "javascriptJS",
+      crossTarget in fullOptJS := (sourceDirectory in Compile).value / "javascriptJS",
+      crossTarget in packageJSDependencies := (sourceDirectory in Compile).value / "javascriptJS",
       libraryDependencies ++= Seq(
           "org.scala-js" %%% "scalajs-dom" % "0.9.4-SNAPSHOT",
           "com.lihaoyi" %%% "scalatags" % "0.6.7"
