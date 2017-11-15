@@ -47,12 +47,19 @@ object GanttImprovedTest {
       *
       **/
 
-    implicit def LocalDateTime2Date(dt: LocalDateTime): Option[js.Date] = Some(new js.Date(year = dt.getYear, month = dt.getMonthValue, date = dt.getDayOfMonth, hours = dt.getHour, minutes = dt.getMinute, seconds = 0, ms = 0))
 
-    implicit def str2LocalDateTime(str: String): LocalDateTime = LocalDateTime.parse(str/*, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")*/)
+    implicit def date2Opt(date: js.Date): Option[js.Date] = Some(date)
 
-    implicit class strOpt(str:String) {
-        def toLDT : LocalDateTime = str
+    implicit class strOpt(str: String) {
+        def toLDT: js.Date = new js.Date(js.Date.parse(str))
+    }
+
+    implicit class dblOpt(double: Double) {
+        def toLDT: js.Date = new js.Date(double)
+    }
+
+    implicit class longOpt(long: Long) {
+        def toLDT: js.Date = new js.Date(long.toDouble)
     }
 
     @JSExportTopLevel("GanttImprovedTest")
