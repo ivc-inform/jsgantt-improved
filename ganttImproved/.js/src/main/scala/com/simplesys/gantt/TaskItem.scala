@@ -66,8 +66,7 @@ class TaskItem(
                 val pParent: Int,
                 val pOpen: Int,
                 val pDepend: String,
-                val pCaption: String,
-                val pNotes: String,
+                val pCaption: String,                                                                                                                                                                         val pNotes: String,
                 val pGantt: GanttChart
               ) extends js.Object
 
@@ -86,7 +85,7 @@ class TaskItemExt(
                    pGroup: Group = Group.normalTask,
                    pParentID: Int = 0,
                    pOpen: Opening = Opening.open,
-                   pDepend: String = "",
+                   pDepend: Seq[String] = Seq(),
                    pCaption: String = "",
                    pNotes: String = ""
                  )(implicit pGantt: GanttChart) extends TaskItem(
@@ -106,7 +105,7 @@ class TaskItemExt(
     pGroup = pGroup.id,
     pParent = pParentID,
     pOpen = pOpen.id,
-    pDepend = pDepend,
+    pDepend = pDepend.mkString(","),
     pCaption = pCaption,
     pNotes = pNotes,
     pGantt = pGantt
