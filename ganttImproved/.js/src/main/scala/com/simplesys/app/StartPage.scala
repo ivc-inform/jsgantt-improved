@@ -54,7 +54,7 @@ object GanttImprovedTest {
             _ ⇒
                 g setCaptionType CaptionType.Complete
                 g setQuarterColWidth 36
-                g setDateTaskDisplayFormat "day dd month yyyy"
+                //g setDateTaskDisplayFormat "day dd month yyyy"
                 g setDayMajorDateDisplayFormat "mon yyyy - Week ww"
                 g setWeekMinorDateDisplayFormat "dd mon"
                 g setShowTaskInfoLink 1
