@@ -12,6 +12,20 @@ import scala.scalajs.js.annotation.JSGlobal
 import scala.language.implicitConversions
 
 object GanttChart extends js.Object {
+    implicit def date2Opt(date: js.Date): Option[js.Date] = Some(date)
+
+    implicit class strOpt(str: String) {
+        def toLDT: js.Date = new js.Date(js.Date.parse(str))
+    }
+
+    implicit class dblOpt(double: Double) {
+        def toLDT: js.Date = new js.Date(double)
+    }
+
+    implicit class longOpt(long: Long) {
+        def toLDT: js.Date = new js.Date(long.toDouble)
+    }
+
     implicit def enabling2Int(value: Enabling): Int = if (value == Enabling.enable) 1 else 0
     implicit def alig2Str(value: Alignment): String = value.toString
     implicit def format2Str(value: Format): String = value.toString
@@ -106,7 +120,7 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       * Configuration Options
       * Switches
       * Many of the features of jsGanttImproved can be customised through the use of setter methods available on the GanttChart object returned by a call to JSGantt.GanttChart()
-      * 
+      *
       * The following options take a single numeric parameter; a value of 1 will enable the describe functionality, 0 will disable it
       *
       **/
@@ -191,7 +205,7 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
       * Defaults to all valid values.
       **/
 
-    def setFormatArr(value: String *): Unit = js.native
+    def setFormatArr(value: String*): Unit = js.native
 
     /**
       * Controls which task field to use as a caption on the Gantt Chart task bar, accepts a single parameter.
