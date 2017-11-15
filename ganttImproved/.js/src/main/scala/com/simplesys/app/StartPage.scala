@@ -45,7 +45,7 @@ object GanttImprovedTest {
         val div = dom.document.getElementById("GanttChartDIV")
         println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
-        val g = new GanttChartExt(div, Format.day)
+        implicit val g = new GanttChartExt(div, Format.day)
         g.addLang("rus", GanttChart.langRus)
         g setLang "rus"
 
@@ -63,9 +63,9 @@ object GanttImprovedTest {
 
                 //g.AddTaskItem(new TaskItem(1, "Define Chart API", "", "", "ggroupblack", "", 0, "Brian", 0, 1, 0, 1, "", "", "Some Notes text",  g))
                 //g.AddTaskItem(new TaskItem(pID = 1, pName = "Define Chart API", pStart = "", pEnd = "", pClass = "ggroupblack", pLink = "", pMile = 0, pRes = "Brian", pComp = 0, pGroup = 1, pParent = 0, pOpen = 1, pDepend = "", pCaption = "", pNotes = "Some Notes text", pGantt = g))
-                g.AddTaskItem(new TaskItemExt(pID = 1, pName = "Define Chart API", pClass = "ggroupblack", pMile = 0, pRes = "Brian", pComp = 0, pGroup = 1, pParent = 0, pOpen = 1, pDepend = "", pCaption = "", pNotes = "Some Notes text", pGantt = g))
+                g.AddTaskItem(new TaskItemExt(pID = 1, pName = "Define Chart API", pClass = "ggroupblack", pRes = "Brian", pGroup = Group.standardGroupTask, pNotes = "Some Notes text"))
 
-                g.AddTaskItem(new TaskItem(11, "Chart Object", "2016-02-20", "2016-02-20", "gmilestone", "Link about", 1, "Shlomy", 100, 0, 1, 1, "", "", "", g))
+                g.AddTaskItem(new TaskItem(11, "Chart Object", "2016-02-20", "2016-02-22", "gmilestone", "Link about", 1, "Shlomy", 100, 0, 1, 1, "", "", "", g))
                 //                g.AddTaskItem(new TaskItem(12, "Task Objects", "", "", "ggroupblack", "", 0, "Shlomy", 40, 1, 1, 1, "", "", "", g))
                 //                g.AddTaskItem(new TaskItem(121, "Constructor Proc", "2016-02-21", "2016-03-09", "gtaskblue", "", 0, "Brian T.", 60, 0, 12, 1, "", "", "", g))
                 //                g.AddTaskItem(new TaskItem(122, "Task Variables", "2016-03-06", "2016-03-11", "gtaskred", "", 0, "Brian", 60, 0, 12, 1, "121", "", "", g))

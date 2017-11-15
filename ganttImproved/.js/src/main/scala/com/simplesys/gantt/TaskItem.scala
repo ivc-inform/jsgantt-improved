@@ -115,29 +115,32 @@ class TaskItemExt(
                    pEnd: String = "",
                    pClass: String,
                    pLink: Link = Link(),
-                   pMile: Int,
-                   pRes: String,
-                   pComp: Int,
-                   pGroup: Int,
-                   pParent: Int,
-                   pOpen: Int,
-                   pDepend: String,
-                   pCaption: String,
-                   pNotes: String,
-                   pGantt: GanttChart
-                 ) extends TaskItem(
+                   pMile: MileStone = MileStone.notMilestone,
+                   pRes: String = "",
+                   pComp: Int = 0,
+                   pGroup: Group = Group.normalTask,
+                   pParent: Int = 0,
+                   pOpen: Opening = Opening.open,
+                   pDepend: String = "",
+                   pCaption: String = "",
+                   pNotes: String = ""
+                 )(implicit pGantt: GanttChart) extends TaskItem(
     pID = pID,
     pName = pName,
     pStart = pStart,
     pEnd = pEnd,
     pClass = pClass,
     pLink = pLink.httpLink,
-    pMile = pMile,
+    pMile = pMile.id,
     pRes = pRes,
-    pComp = pComp,
-    pGroup = pGroup,
+    pComp = pGroup match {
+        case Group.normalTask ⇒ pComp
+        case Group.standardGroupTask ⇒ 0
+        case Group.combinedGroup ⇒ 0
+    },
+    pGroup = pGroup.id,
     pParent = pParent,
-    pOpen = pOpen,
+    pOpen = pOpen.id,
     pDepend = pDepend,
     pCaption = pCaption,
     pNotes = pNotes,
