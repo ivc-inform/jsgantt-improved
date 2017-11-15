@@ -4,5 +4,5 @@ import language.implicitConversions
 
 object TaskCssClass extends Enumeration {
     type TaskCssClass = Value
-    val ggroupblack = Value
+    val ggroupblack, gmilestone = Value
 }

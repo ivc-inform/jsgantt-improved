@@ -62,8 +62,7 @@ object GanttImprovedTest {
                 g setUseSingleCell 10000
                 g setFormatArr(Format.hour, Format.day, Format.week, Format.month, Format.quarter)
                 g.AddTaskItem(new TaskItemExt(pID = 1, pName = "Define Chart API", pClass = ggroupblack, pRes = "Brian", pGroup = Group.standardGroupTask, pNotes = "Some Notes text"))
-
-                g.AddTaskItem(new TaskItem(11, "Chart Object", "2016-02-20", "2016-02-22", "gmilestone", "Link about", 1, "Shlomy", 100, 0, 1, 1, "", "", "", g))
+                g.AddTaskItem(new TaskItemExt(pID = 11, pName = "Chart Object", pStart="2016-02-20", pEnd="2016-02-22", pClass = gmilestone, pLink = Link("Link about"), pMile = MileStone.milestone, pRes = "Shlomy", pComp = 100, pParentID = 1))
                 //                g.AddTaskItem(new TaskItem(12, "Task Objects", "", "", "ggroupblack", "", 0, "Shlomy", 40, 1, 1, 1, "", "", "", g))
                 //                g.AddTaskItem(new TaskItem(121, "Constructor Proc", "2016-02-21", "2016-03-09", "gtaskblue", "", 0, "Brian T.", 60, 0, 12, 1, "", "", "", g))
                 //                g.AddTaskItem(new TaskItem(122, "Task Variables", "2016-03-06", "2016-03-11", "gtaskred", "", 0, "Brian", 60, 0, 12, 1, "121", "", "", g))

@@ -81,7 +81,7 @@ class TaskItemExt(
                    pRes: String = "",
                    pComp: Int = 0,
                    pGroup: Group = Group.normalTask,
-                   pParent: Int = 0,
+                   pParentID: Int = 0,
                    pOpen: Opening = Opening.open,
                    pDepend: String = "",
                    pCaption: String = "",
@@ -101,7 +101,7 @@ class TaskItemExt(
         case Group.combinedGroup ⇒ 0
     },
     pGroup = pGroup.id,
-    pParent = pParent,
+    pParent = pParentID,
     pOpen = pOpen.id,
     pDepend = pDepend,
     pCaption = pCaption,
