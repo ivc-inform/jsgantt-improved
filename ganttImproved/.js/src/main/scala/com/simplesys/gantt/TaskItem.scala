@@ -1,5 +1,7 @@
 package com.simplesys.gantt
 
+import java.time.LocalDateTime
+
 import com.simplesys.gantt.Enabling.Enabling
 import com.simplesys.gantt.Group.Group
 import com.simplesys.gantt.MileStone.MileStone
@@ -9,6 +11,7 @@ import com.simplesys.gantt.TaskCssClass.TaskCssClass
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
 import scala.language.implicitConversions
+import scala.scalajs.js.|
 
 object TaskItem {
     implicit def mile2Int(value: MileStone): Int = value.id
@@ -52,8 +55,8 @@ object TaskItem {
 class TaskItem(
                 val pID: Int,
                 val pName: String,
-                val pStart: String,
-                val pEnd: String,
+                val pStart: String | js.Date,
+                val pEnd: String  | js.Date,
                 val pClass: String,
                 val pLink: String,
                 val pMile: Int,
@@ -73,8 +76,8 @@ import TaskItem._
 class TaskItemExt(
                    pID: Int,
                    pName: String,
-                   pStart: String = "",
-                   pEnd: String = "",
+                   pStart: Option[js.Date] = None,
+                   pEnd: Option[js.Date] = None,
                    pClass: TaskCssClass,
                    pLink: Link = Link(),
                    pMile: MileStone = MileStone.notMilestone,
@@ -89,8 +92,8 @@ class TaskItemExt(
                  )(implicit pGantt: GanttChart) extends TaskItem(
     pID = pID,
     pName = pName,
-    pStart = pStart,
-    pEnd = pEnd,
+    pStart = if (pStart.isDefined) pStart.get else "",
+    pEnd = if (pEnd.isDefined) pEnd.get else "",
     pClass = pClass.toString,
     pLink = pLink.httpLink,
     pMile = pMile.id,
