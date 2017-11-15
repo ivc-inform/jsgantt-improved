@@ -15,7 +15,11 @@ object GanttChart extends js.Object {
     implicit def date2Opt(date: js.Date): Option[js.Date] = Some(date)
 
     implicit class strOpt(str: String) {
-        def toLDT: js.Date = new js.Date(js.Date.parse(str))
+        def toLDT: js.Date = {
+            val res = new js.Date(js.Date.parse(str))
+            println(res.getTimezoneOffset())
+            res
+        }
     }
 
     implicit class dblOpt(double: Double) {
