@@ -49,32 +49,33 @@ object TaskItem {
 @js.native
 @JSGlobal("JSGantt.TaskItem")
 class TaskItem(
-                          val pID: Int,
-                          val pName: String,
-                          val pStart: String,
-                          val pEnd: String,
-                          val pClass: String,
-                          val pLink: String,
-                          val pMile: Int,
-                          val pRes: String,
-                          val pComp: Int,
-                          val pGroup: Int,
-                          val pParent: Int,
-                          val pOpen: Int,
-                          val pDepend: String,
-                          val pCaption: String,
-                          val pNotes: String,
-                          val pGantt: GanttChart
-                        ) extends js.Object
+                val pID: Int,
+                val pName: String,
+                val pStart: String,
+                val pEnd: String,
+                val pClass: String,
+                val pLink: String,
+                val pMile: Int,
+                val pRes: String,
+                val pComp: Int,
+                val pGroup: Int,
+                val pParent: Int,
+                val pOpen: Int,
+                val pDepend: String,
+                val pCaption: String,
+                val pNotes: String,
+                val pGantt: GanttChart
+              ) extends js.Object
 
 import TaskItem._
+
 class TaskItemExt(
                    pID: Int,
                    pName: String,
                    pStart: String = "",
                    pEnd: String = "",
                    pClass: String,
-                   pLink: String = "",
+                   pLink: Link = Link(),
                    pMile: MileStone = MileStone.notMilestone,
                    pRes: String = "",
                    pComp: Int = 0,
@@ -91,7 +92,7 @@ class TaskItemExt(
     pStart = pStart,
     pEnd = pEnd,
     pClass = pClass,
-    pLink = pLink,
+    pLink = pLink.httpLink,
     pMile = pMile,
     pRes = pRes,
     pComp = (if (pComp < 0 || pComp > 100) 0 else pComp),
@@ -103,3 +104,5 @@ class TaskItemExt(
     pNotes = pNotes,
     pGantt = pGantt
 )
+
+case class Link(httpLink: String = "")
