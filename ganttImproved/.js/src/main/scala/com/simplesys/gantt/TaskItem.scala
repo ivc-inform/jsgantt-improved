@@ -4,6 +4,7 @@ import com.simplesys.gantt.Enabling.Enabling
 import com.simplesys.gantt.Group.Group
 import com.simplesys.gantt.MileStone.MileStone
 import com.simplesys.gantt.Opening.Opening
+import com.simplesys.gantt.TaskCssClass.TaskCssClass
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
@@ -113,7 +114,7 @@ class TaskItemExt(
                    pName: String,
                    pStart: String = "",
                    pEnd: String = "",
-                   pClass: String,
+                   pClass: TaskCssClass,
                    pLink: Link = Link(),
                    pMile: MileStone = MileStone.notMilestone,
                    pRes: String = "",
@@ -129,7 +130,7 @@ class TaskItemExt(
     pName = pName,
     pStart = pStart,
     pEnd = pEnd,
-    pClass = pClass,
+    pClass = pClass.toString,
     pLink = pLink.httpLink,
     pMile = pMile.id,
     pRes = pRes,
