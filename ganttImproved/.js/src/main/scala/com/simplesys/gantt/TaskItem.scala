@@ -56,7 +56,7 @@ class TaskItem(
                 val pID: Int,
                 val pName: String,
                 val pStart: String | js.Date,
-                val pEnd: String  | js.Date,
+                val pEnd: String | js.Date,
                 val pClass: String,
                 val pLink: String,
                 val pMile: Int,
@@ -66,7 +66,7 @@ class TaskItem(
                 val pParent: Int,
                 val pOpen: Int,
                 val pDepend: String,
-                val pCaption: String,                                                                                                                                                                         val pNotes: String,
+                val pCaption: String, val pNotes: String,
                 val pGantt: GanttChart
               ) extends js.Object
 

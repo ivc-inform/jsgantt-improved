@@ -15,7 +15,6 @@ object GanttChart extends js.Object {
     implicit def date2Opt(date: js.Date): Option[js.Date] = Some(date)
     implicit def int2Seq(int: Int): Seq[String] = Seq(int.toString)
     implicit def str2Seq(str: String): Seq[String] = Seq(str)
-    implicit def str2Seq(ints: Seq[Int]): Seq[String] = ints.map(_.toString)
 
     implicit class strOpt(str: String) {
         def toLDT: js.Date = {
