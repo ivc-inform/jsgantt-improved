@@ -70,45 +70,6 @@ class TaskItem(
 
 import TaskItem._
 
-
-/*
-* class TaskItemExt(
-                   pID: Int,
-                   pName: String,
-                   pStart: String,
-                   pEnd: String,
-                   pClass: String,
-                   pLink: Link = Link(),
-                   pMile: MileStone,
-                   pRes: String,
-                   pComp: Int,
-                   pGroup: Group,
-                   pParent: Int,
-                   pOpen: Opening,
-                   pDepend: String,
-                   pCaption: String,
-                   pNotes: String,
-                   pGantt: GanttChart
-                 ) extends TaskItem(
-    pID = pID,
-    pName = pName,
-    pStart = pStart,
-    pEnd = pEnd,
-    pClass = pClass,
-    pLink = pLink.httpLink,
-    pMile = pMile,
-    pRes = pRes,
-    pComp = pComp,
-    pGroup = pGroup,
-    pParent = pParent,
-    pOpen = pOpen,
-    pDepend = pDepend,
-    pCaption = pCaption,
-    pNotes = pNotes,
-    pGantt = pGantt
-)
-* */
-
 class TaskItemExt(
                    pID: Int,
                    pName: String,
