@@ -69,22 +69,24 @@ class TaskItem(
 
 import TaskItem._
 
-class TaskItemExt(
+
+/*
+* class TaskItemExt(
                    pID: Int,
                    pName: String,
-                   pStart: String = "",
-                   pEnd: String = "",
+                   pStart: String,
+                   pEnd: String,
                    pClass: String,
                    pLink: Link = Link(),
-                   pMile: MileStone = MileStone.notMilestone,
-                   pRes: String = "",
-                   pComp: Int = 0,
-                   pGroup: Group = Group.normalTask,
-                   pParent: Int = 0,
-                   pOpen: Opening = Opening.open,
-                   pDepend: String = "",
-                   pCaption: String = "",
-                   pNotes: String = "",
+                   pMile: MileStone,
+                   pRes: String,
+                   pComp: Int,
+                   pGroup: Group,
+                   pParent: Int,
+                   pOpen: Opening,
+                   pDepend: String,
+                   pCaption: String,
+                   pNotes: String,
                    pGantt: GanttChart
                  ) extends TaskItem(
     pID = pID,
@@ -95,7 +97,44 @@ class TaskItemExt(
     pLink = pLink.httpLink,
     pMile = pMile,
     pRes = pRes,
-    pComp = (if (pComp < 0 || pComp > 100) 0 else pComp),
+    pComp = pComp,
+    pGroup = pGroup,
+    pParent = pParent,
+    pOpen = pOpen,
+    pDepend = pDepend,
+    pCaption = pCaption,
+    pNotes = pNotes,
+    pGantt = pGantt
+)
+* */
+
+class TaskItemExt(
+                   pID: Int,
+                   pName: String,
+                   pStart: String = "",
+                   pEnd: String = "",
+                   pClass: String,
+                   pLink: String,
+                   pMile: Int,
+                   pRes: String,
+                   pComp: Int,
+                   pGroup: Int,
+                   pParent: Int,
+                   pOpen: Int,
+                   pDepend: String,
+                   pCaption: String,
+                   pNotes: String,
+                   pGantt: GanttChart
+                 ) extends TaskItem(
+    pID = pID,
+    pName = pName,
+    pStart = pStart,
+    pEnd = pEnd,
+    pClass = pClass,
+    pLink = pLink,
+    pMile = pMile,
+    pRes = pRes,
+    pComp = pComp,
     pGroup = pGroup,
     pParent = pParent,
     pOpen = pOpen,
