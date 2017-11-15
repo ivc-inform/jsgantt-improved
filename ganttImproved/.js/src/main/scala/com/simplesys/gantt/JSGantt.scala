@@ -13,8 +13,9 @@ import scala.language.implicitConversions
 
 object GanttChart extends js.Object {
     implicit def date2Opt(date: js.Date): Option[js.Date] = Some(date)
-    implicit def int2Seq(int: Int): Seq[String] = Seq(int.toString)
-    implicit def str2Seq(str: String): Seq[String] = Seq(str)
+    implicit def int2Dep(int: Int): Seq[Depend] = Seq(Depend(int))
+    implicit def int2SeqDep(ints: Seq[Int]): Seq[Depend] = ints.map(Depend(_))
+    implicit def dep2Seq(dep: Depend): Seq[Depend] = Seq(dep)
 
     implicit class strOpt(str: String) {
         def toLDT: js.Date = {
@@ -33,7 +34,9 @@ object GanttChart extends js.Object {
     }
 
     implicit class intOpt(int: Int) {
-        def SS: String = s"${int}SS"
+        def SS: Depend = Depend(int, DependEn.SS)
+        def FF: Depend = Depend(int, DependEn.FF)
+        def SF: Depend = Depend(int, DependEn.SF)
     }
 
     implicit def enabling2Int(value: Enabling): Int = if (value == Enabling.enable) 1 else 0

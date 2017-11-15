@@ -1,16 +1,14 @@
 package com.simplesys.gantt
 
-import java.time.LocalDateTime
-
-import com.simplesys.gantt.Enabling.Enabling
+import com.simplesys.gantt.DependEn.DependEn
 import com.simplesys.gantt.Group.Group
 import com.simplesys.gantt.MileStone.MileStone
 import com.simplesys.gantt.Opening.Opening
 import com.simplesys.gantt.TaskCssClass.TaskCssClass
 
+import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
-import scala.language.implicitConversions
 import scala.scalajs.js.|
 
 object TaskItem {
@@ -70,7 +68,9 @@ class TaskItem(
                 val pGantt: GanttChart
               ) extends js.Object
 
-import TaskItem._
+case class Depend(id:Int, suffix: DependEn = DependEn.FS) {
+    override def toString = s"${id}${suffix.toString}"
+}
 
 class TaskItemExt(
                    pID: Int,
@@ -85,7 +85,7 @@ class TaskItemExt(
                    pGroup: Group = Group.normalTask,
                    pParentID: Int = 0,
                    pOpen: Opening = Opening.open,
-                   pDepend: Seq[String] = Seq(),
+                   pDepend: Seq[Depend] = Seq(),
                    pCaption: String = "",
                    pNotes: String = ""
                  )(implicit pGantt: GanttChart) extends TaskItem(
