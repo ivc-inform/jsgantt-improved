@@ -1047,8 +1047,8 @@ JSGantt.GanttChart = function (pDiv, pFormat) {
             if (vShowRes == 1) this.newNode(vTmpRow, 'td', null, 'gspanning gresource', '\u00A0');
             if (vShowDur == 1) this.newNode(vTmpRow, 'td', null, 'gspanning gduration', '\u00A0');
             if (vShowComp == 1) this.newNode(vTmpRow, 'td', null, 'gspanning gpccomplete', '\u00A0');
-            if (vShowStartDate == 1) this.newNode(vTmpRow, 'td', null, 'gspanning gstartdate', '\u00A0');
-            if (vShowEndDate == 1) this.newNode(vTmpRow, 'td', null, 'gspanning genddate', '\u00A0');
+            if (vShowStartDate == 1) this.newNode(vTmpRow, 'td', null, 'gspanning gstartdate', '\u00A0', 100);
+            if (vShowEndDate == 1) this.newNode(vTmpRow, 'td', null, 'gspanning genddate', '\u00A0', 100);
 
             vTmpRow = this.newNode(vTmpTBody, 'tr');
             this.newNode(vTmpRow, 'td', null, 'gtasklist', '\u00A0');
@@ -1056,8 +1056,8 @@ JSGantt.GanttChart = function (pDiv, pFormat) {
             if (vShowRes == 1) this.newNode(vTmpRow, 'td', null, 'gtaskheading gresource', vLangs[vLang]['resource']);
             if (vShowDur == 1) this.newNode(vTmpRow, 'td', null, 'gtaskheading gduration', vLangs[vLang]['duration']);
             if (vShowComp == 1) this.newNode(vTmpRow, 'td', null, 'gtaskheading gpccomplete', vLangs[vLang]['comp']);
-            if (vShowStartDate == 1) this.newNode(vTmpRow, 'td', null, 'gtaskheading gstartdate', vLangs[vLang]['startdate']);
-            if (vShowEndDate == 1) this.newNode(vTmpRow, 'td', null, 'gtaskheading genddate', vLangs[vLang]['enddate']);
+            if (vShowStartDate == 1) this.newNode(vTmpRow, 'td', null, 'gtaskheading gstartdate', vLangs[vLang]['startdate'], 100);
+            if (vShowEndDate == 1) this.newNode(vTmpRow, 'td', null, 'gtaskheading genddate', vLangs[vLang]['enddate'], 100);
 
             var vLeftTable = document.createDocumentFragment();
             var vTmpDiv2 = this.newNode(vLeftTable, 'div', vDivId + 'glistbody', 'glistgrid gcontainercol');

@@ -37,9 +37,9 @@ td.gspanning				{ border-left: none; border-right: none; }
 .gduration,
 .gpccomplete,
 .gstartdate div, /* needed for IE8 */
-.gstartdate					{ text-align: center; min-width: 70px; max-width: 70px; width: 70px; font-size: 10px; }
+.gstartdate					{ text-align: center; min-width: 70px; max-width: 100px; width: 70px; font-size: 10px; }
 .genddate div, /* needed for IE8 */
-.genddate					{ text-align: center; min-width: 70px; max-width: 70px; width: 70px; font-size: 10px; }
+.genddate					{ text-align: center; min-width: 70px; max-width: 100px; width: 70px; font-size: 10px; }
 .gtaskheading				{ text-align: center; }
 .gtaskname div, /* needed for IE8 */
 .gtaskname					{ min-width: 170px; max-width: 170px; width: 170px; font-size: 9px; border-left: none; }
