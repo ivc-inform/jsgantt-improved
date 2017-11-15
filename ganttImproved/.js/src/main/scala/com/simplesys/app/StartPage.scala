@@ -44,7 +44,6 @@ object GanttImprovedTest {
     @JSExportTopLevel("GanttImprovedTest")
     def get() = {
         val div = dom.document.getElementById("GanttChartDIV")
-        println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
         implicit val g = new GanttChartExt(div, Format.day)
         g.addLang("rus", GanttChart.langRus)
@@ -60,7 +59,7 @@ object GanttImprovedTest {
                 g setWeekMinorDateDisplayFormat "dd mon"
                 g setShowTaskInfoLink 1
                 g setShowEndWeekDate 0
-                g setUseSingleCell 10000
+                g setUseSingleCell 20000
                 g setShowComp 1
                 //g setShowTaskInfoStartDate 0
                 //g setFormatArr(Format.hour, Format.day, Format.week, Format.month, Format.quarter)
