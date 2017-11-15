@@ -63,7 +63,7 @@ object GanttImprovedTest {
 
                 //g.AddTaskItem(new TaskItem(1, "Define Chart API", "", "", "ggroupblack", "", 0, "Brian", 0, 1, 0, 1, "", "", "Some Notes text",  g))
                 //g.AddTaskItem(new TaskItem(pID = 1, pName = "Define Chart API", pStart = "", pEnd = "", pClass = "ggroupblack", pLink = "", pMile = 0, pRes = "Brian", pComp = 0, pGroup = 1, pParent = 0, pOpen = 1, pDepend = "", pCaption = "", pNotes = "Some Notes text", pGantt = g))
-                g.AddTaskItem(new TaskItemExt(pID = 1, pName = "Define Chart API", pClass = "ggroupblack", pLink = "", pMile = 0, pRes = "Brian", pComp = 0, pGroup = 1, pParent = 0, pOpen = 1, pDepend = "", pCaption = "", pNotes = "Some Notes text", pGantt = g))
+                g.AddTaskItem(new TaskItemExt(pID = 1, pName = "Define Chart API", pClass = "ggroupblack", pMile = 0, pRes = "Brian", pComp = 0, pGroup = 1, pParent = 0, pOpen = 1, pDepend = "", pCaption = "", pNotes = "Some Notes text", pGantt = g))
 
                 g.AddTaskItem(new TaskItem(11, "Chart Object", "2016-02-20", "2016-02-20", "gmilestone", "Link about", 1, "Shlomy", 100, 0, 1, 1, "", "", "", g))
                 //                g.AddTaskItem(new TaskItem(12, "Task Objects", "", "", "ggroupblack", "", 0, "Shlomy", 40, 1, 1, 1, "", "", "", g))
