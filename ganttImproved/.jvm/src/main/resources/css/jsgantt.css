@@ -37,9 +37,9 @@ td.gspanning				{ border-left: none; border-right: none; }
 .gduration,
 .gpccomplete                { text-align: center; min-width: 70px; max-width: 70px; width: 70px; font-size: 10px; }
 .gstartdate div, /* needed for IE8 */
-.gstartdate					{ text-align: center; min-width: 85px; max-width: 85px; width: 85px; font-size: 10px; }
+.gstartdate					{ text-align: center; min-width: 90px; max-width: 90px; width: 90px; font-size: 10px; }
 .genddate div, /* needed for IE8 */
-.genddate					{ text-align: center; min-width: 85px; max-width: 85px; width: 85px; font-size: 10px; }
+.genddate					{ text-align: center; min-width: 90px; max-width: 90px; width: 90px; font-size: 10px; }
 .gtaskheading				{ text-align: center; }
 .gtaskname div, /* needed for IE8 */
 .gtaskname					{ min-width: 170px; max-width: 170px; width: 170px; font-size: 9px; border-left: none; }
@@ -183,8 +183,8 @@ div.gtaskbarcontainer		{ z-index: 1; position: absolute; top: 0px }
 .gantt				{ min-width: 632px;	/* 2x LC width */ }
 .gchartcontainer	{ /* padding-left: 532px; LC width */ line-height: 1; /* Overrides inherited CSS (e.g. from Bootstrap) */ }
 .gcontainercol		{ position: relative; } /* Add a max-height value here if wanted */
-.glistgrid			{ width: 561px; /* LC width */ float: left; /* LC width */ padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 0px; background-color: #ffffff; overflow: hidden; }
-.glistlbl			{ width: 561px; /* LC width */ float: left; /* LC width */ padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 0px; background-color: #ffffff; overflow: hidden; }
+.glistgrid			{ width: 571px; /* LC width */ float: left; /* LC width */ padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 0px; background-color: #ffffff; overflow: hidden; }
+.glistlbl			{ width: 571px; /* LC width */ float: left; /* LC width */ padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 0px; background-color: #ffffff; overflow: hidden; }
 .glabelfooter		{ clear: both; }
 .ggridfooter		{ clear: both; }
 
