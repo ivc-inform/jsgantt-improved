@@ -1,12 +1,18 @@
 package com.simplesys.app
 
+import java.time.LocalDateTime
+
 import com.simplesys.gantt.GanttChart._
 import com.simplesys.gantt._
 import org.scalajs.dom
 
 import scala.language.implicitConversions
 import scala.scalajs.js.annotation.JSExportTopLevel
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import TaskCssClass._
+
+import scala.scalajs.js
 
 object GanttImprovedTest {
 
@@ -41,6 +47,14 @@ object GanttImprovedTest {
       *
       **/
 
+    implicit def LocalDateTime2Date(dt: LocalDateTime): Option[js.Date] = Some(new js.Date(year = dt.getYear, month = dt.getMonthValue, date = dt.getDayOfMonth, hours = dt.getHour, minutes = dt.getMinute, seconds = 0, ms = 0))
+
+    implicit def str2LocalDateTime(str: String): LocalDateTime = LocalDateTime.parse(str/*, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")*/)
+
+    implicit class strOpt(str:String) {
+        def toLDT : LocalDateTime = str
+    }
+
     @JSExportTopLevel("GanttImprovedTest")
     def get() = {
         val div = dom.document.getElementById("GanttChartDIV")
@@ -64,7 +78,7 @@ object GanttImprovedTest {
                 //g setShowTaskInfoStartDate 0
                 //g setFormatArr(Format.hour, Format.day, Format.week, Format.month, Format.quarter)
                 g.AddTaskItem(new TaskItemExt(pID = 1, pName = "Define Chart API", pClass = ggroupblack, pRes = "Brian", pGroup = Group.standardGroupTask, pNotes = "Some Notes text"))
-                g.AddTaskItem(new TaskItemExt(pID = 11, pName = "Chart Object", pStart = "2016-02-20 12:30", pEnd = "2016-02-22 01:22", pClass = gmilestone, pLink = Link("Link about"), pMile = MileStone.milestone, pRes = "Shlomy", pComp = 100, pParentID = 1))
+                g.AddTaskItem(new TaskItemExt(pID = 11, pName = "Chart Object", pStart = "2016-02-20 12:30".toLDT, pEnd = "2016-02-22 01:22".toLDT, pClass = gmilestone, pLink = Link("Link about"), pMile = MileStone.milestone, pRes = "Shlomy", pComp = 100, pParentID = 1))
                 //                                g.AddTaskItem(new TaskItemExt(12, "Task Objects", "", "", "ggroupblack", "", 0, "Shlomy", 40, 1, 1, 1, "", "", "", g))
                 //                                g.AddTaskItem(new TaskItem(121, "Constructor Proc", "2016-02-21", "2016-03-09", "gtaskblue", "", 0, "Brian T.", 60, 0, 12, 1, "", "", "", g))
                 //                                g.AddTaskItem(new TaskItem(122, "Task Variables", "2016-03-06", "2016-03-11", "gtaskred", "", 0, "Brian", 60, 0, 12, 1, "121", "", "", g))
