@@ -1,18 +1,12 @@
 package com.simplesys.app
 
-import java.time.LocalDateTime
-
 import com.simplesys.gantt.GanttChart._
+import com.simplesys.gantt.TaskCssClass._
 import com.simplesys.gantt._
 import org.scalajs.dom
 
 import scala.language.implicitConversions
 import scala.scalajs.js.annotation.JSExportTopLevel
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import TaskCssClass._
-
-import scala.scalajs.js
 
 object GanttImprovedTest {
 
@@ -75,7 +69,7 @@ object GanttImprovedTest {
                 g.AddTaskItem(new TaskItemExt(pID = 121, pName = "Constructor Proc", pStart = "2016-02-21 00:00".toLDT, pEnd = "2016-03-09 00:00".toLDT, pClass = gtaskblue, pRes = "Brian T.", pComp = 60, pParentID = 12, pOpen = Opening.open))
                 g.AddTaskItem(new TaskItemExt(pID = 122, pName = "Task Variables", pStart = "2016-03-06 00:00".toLDT, pEnd = "2016-03-11 00:00".toLDT, pClass = gtaskred, pRes = "Brian", pComp = 60, pParentID = 12, pOpen = Opening.open, pDepend = 121))
                 g.AddTaskItem(new TaskItemExt(pID = 123, pName = "Task by Minute/Hour", pStart = "2016-03-09 00:00".toLDT, pEnd = "2016-03-14 00:00".toLDT, pClass = gtaskyellow, pRes = "Ilan", pComp = 60, pParentID = 12, pOpen = Opening.open))
-                g.AddTaskItem(new TaskItemExt(pID = 124, pName = "Task Functions", pStart = "2016-03-09 00:00".toLDT, pEnd = "2016-03-29 00:00".toLDT, pClass = gtaskred, pRes = "Anyone", pComp = 60, pParentID = 12, pOpen = Opening.open,  pDepend = (123).SS, pCaption = "This is a caption"))
+                g.AddTaskItem(new TaskItemExt(pID = 124, pName = "Task Functions", pStart = "2016-03-09 00:00".toLDT, pEnd = "2016-03-29 00:00".toLDT, pClass = gtaskred, pRes = "Anyone", pComp = 60, pParentID = 12, pOpen = Opening.open, pDepend = (123).SS, pCaption = "This is a caption"))
                 g.AddTaskItem(new TaskItemExt(pID = 2, pName = "Create HTML Shell", pStart = "2016-03-24 00:00".toLDT, pEnd = "2016-03-24 00:00".toLDT, pClass = gtaskyellow, pRes = "Brian", pComp = 20, pOpen = Opening.open, pDepend = 122))
                 g.AddTaskItem(new TaskItemExt(pID = 3, pName = "Code Javascript", pClass = ggroupblack, pRes = "Brian", pGroup = Group.standardGroupTask, pOpen = Opening.open))
                 g.AddTaskItem(new TaskItemExt(pID = 31, pName = "Define Variables", pStart = "2016-02-25 00:00".toLDT, pEnd = "2016-03-17 00:00".toLDT, pClass = gtaskpurple, pRes = "Brian", pComp = 30, pParentID = 3, pOpen = Opening.open, pCaption = "Caption 1"))
