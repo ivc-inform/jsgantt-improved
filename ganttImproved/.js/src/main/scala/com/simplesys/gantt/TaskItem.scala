@@ -68,10 +68,6 @@ class TaskItem(
                 val pGantt: GanttChart
               ) extends js.Object
 
-case class Depend(id:Int, suffix: DependEn = DependEn.FS) {
-    override def toString = s"${id}${suffix.toString}"
-}
-
 class TaskItemExt(
                    pID: Int,
                    pName: String,
@@ -111,4 +107,3 @@ class TaskItemExt(
     pGantt = pGantt
 )
 
-case class Link(httpLink: String = "")

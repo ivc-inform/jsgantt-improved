@@ -1,6 +1,6 @@
 package com.simplesys.gantt
 
-import language.implicitConversions
+import scala.language.implicitConversions
 
 object TaskCssClass extends Enumeration {
     type TaskCssClass = Value
