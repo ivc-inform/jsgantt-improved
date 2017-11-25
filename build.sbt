@@ -20,6 +20,9 @@ lazy val ganttImproved = crossProject(JSPlatform, JVMPlatform)
   )
   .settings(CommonSettings.defaultSettings)
   .jvmSettings(
+      libraryDependencies ++= Seq(
+          "org.scalatest" %% "scalatest" % "3.0.4" % Test
+      )
   )
   .jsSettings(
       crossTarget in fastOptJS := (sourceDirectory in Compile).value / "javascriptJS",

@@ -1,5 +1,5 @@
 package tests
 
-class TestSuit {
+import org.scalatest.FunSuite
 
-}
+
