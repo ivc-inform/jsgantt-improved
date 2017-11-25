@@ -17,6 +17,10 @@ lazy val ganttImproved = crossProject(JSPlatform, JVMPlatform)
   .settings(CommonSettings.publishSettings)
   .settings(
       name := "jsgantt-improved",
+      libraryDependencies := Seq(
+          "org.scalatest" %%% "scalatest" % "3.0.4" % Test,
+          "org.scalatest" %% "scalatest" % "3.0.4" % Test
+      )
   )
   .settings(CommonSettings.defaultSettings)
   .jvmSettings(
