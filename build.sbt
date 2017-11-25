@@ -7,7 +7,7 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
           scalaVersion := CommonSettings.settingValues.scalaVersion,
           scalacOptions := CommonSettings.settingValues.scalacOptions,
           organization := CommonSettings.settingValues.organization
-      )++ CommonSettings.defaultSettings)
+      ) ++ CommonSettings.defaultSettings)
   )
   .aggregate(ganttImproved)
   .dependsOn(ganttImproved)
@@ -16,21 +16,17 @@ lazy val ganttImproved = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .settings(CommonSettings.publishSettings)
   .settings(
-      name := "jsgantt-improved"/*,
-      libraryDependencies := Seq(
-          "org.scalatest" %%% "scalatest" % "3.0.4" % Test,
-          "org.scalatest" %% "scalatest" % "3.0.4" % Test
-      )*/
+      name := "jsgantt-improved"
   )
   .settings(CommonSettings.defaultSettings)
   .jvmSettings(
-      // Add JVM-specific settings here
   )
   .jsSettings(
       crossTarget in fastOptJS := (sourceDirectory in Compile).value / "javascriptJS",
       crossTarget in fullOptJS := (sourceDirectory in Compile).value / "javascriptJS",
       crossTarget in packageJSDependencies := (sourceDirectory in Compile).value / "javascriptJS",
       libraryDependencies ++= Seq(
+          "org.scalatest" %%% "scalatest" % "3.0.4" % Test,
           "org.scala-js" %%% "scalajs-dom" % "0.9.4-SNAPSHOT",
           "com.lihaoyi" %%% "scalatags" % "0.6.7"
       ),
