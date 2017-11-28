@@ -7,7 +7,7 @@ import com.simplesys.gantt.MileStone.MileStone
 import com.simplesys.gantt.Opening.Opening
 
 case class TaskItemExt(
-                        pID: Int,
+                        pID: Long,
                         pName: String,
                         pStart: Option[LocalDateTime] = None,
                         pEnd: Option[LocalDateTime] = None,
