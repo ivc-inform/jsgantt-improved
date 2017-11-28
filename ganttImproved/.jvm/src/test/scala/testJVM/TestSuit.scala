@@ -14,7 +14,7 @@ class TestSuit extends FunSuite{
               pID = 0L,
               pName = "",
               pClass = ggroupblack
-          ).asJson
+          ).asJson.spaces4
       )
   }
 
