@@ -1,4 +1,4 @@
-package com.simplesys.gantt
+package com.simplesys.gantt.JVM
 
 import java.time.LocalDateTime
 
