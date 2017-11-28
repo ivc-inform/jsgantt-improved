@@ -6,7 +6,7 @@ import com.simplesys.common.Time._
 import com.simplesys.gantt.Group.Group
 import com.simplesys.gantt.MileStone.MileStone
 import com.simplesys.gantt.Opening.Opening
-import com.simplesys.gantt.{Group, MileStone, Opening, TaskCssClass}
+import com.simplesys.gantt._
 import com.simplesys.gantt.TaskCssClass.TaskCssClass
 import io.circe.java8.time._
 import io.circe.{Decoder, Encoder}
@@ -26,6 +26,9 @@ object TaskItemExt {
 
     implicit val mileStoneDecoder: Decoder[MileStone.Value] = Decoder.enumDecoder(MileStone)
     implicit val mileStoneEncoder: Encoder[MileStone.Value] = Encoder.enumEncoder(MileStone)
+
+    implicit val dependEnDecoder: Decoder[DependEn.Value] = Decoder.enumDecoder(DependEn)
+    implicit val dependEnEncoder: Encoder[DependEn.Value] = Encoder.enumEncoder(DependEn)
 }
 
 case class TaskItemExt(
@@ -39,9 +42,9 @@ case class TaskItemExt(
                         pRes: Option[String] = None,
                         pComp: Option[Int] = None,
                         pGroup: Option[Group] = None,
-                        pParent: Option[Int] = None,
+                        pParent: Option[Long] = None,
                         pOpen: Option[Opening] = None,
-                        pDepend: Option[String] = None,
+                        pDepend: Option[Depend] = None,
                         pCaption: Option[String] = None,
                         pNotes: Option[String] = None
                       )
