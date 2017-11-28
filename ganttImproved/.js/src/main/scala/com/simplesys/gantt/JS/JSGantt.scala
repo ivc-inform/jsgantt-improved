@@ -1,15 +1,16 @@
-package com.simplesys.gantt
+package com.simplesys.gantt.JS
 
 import com.simplesys.gantt.Alignment.Alignment
 import com.simplesys.gantt.CaptionType.CaptionType
 import com.simplesys.gantt.DateInputFormat.DateInputFormat
 import com.simplesys.gantt.Enabling.Enabling
 import com.simplesys.gantt.Format.Format
+import com.simplesys.gantt._
 import org.scalajs.dom.raw._
 
+import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
-import scala.language.implicitConversions
 
 object GanttChart extends js.Object {
     implicit def date2Opt(date: js.Date): Option[js.Date] = Some(date)

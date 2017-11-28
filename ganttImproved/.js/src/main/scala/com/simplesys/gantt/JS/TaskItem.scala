@@ -1,10 +1,10 @@
-package com.simplesys.gantt
+package com.simplesys.gantt.JS
 
-import com.simplesys.gantt.DependEn.DependEn
 import com.simplesys.gantt.Group.Group
 import com.simplesys.gantt.MileStone.MileStone
 import com.simplesys.gantt.Opening.Opening
 import com.simplesys.gantt.TaskCssClass.TaskCssClass
+import com.simplesys.gantt._
 
 import scala.language.implicitConversions
 import scala.scalajs.js

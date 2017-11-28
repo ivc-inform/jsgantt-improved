@@ -1,6 +1,7 @@
 package com.simplesys.app
 
-import com.simplesys.gantt.GanttChart._
+import com.simplesys.gantt.JS.{GanttChart, GanttChartExt, TaskItemExt}
+import com.simplesys.gantt.JS.GanttChart._
 import com.simplesys.gantt.TaskCssClass._
 import com.simplesys.gantt._
 import org.scalajs.dom
