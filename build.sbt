@@ -12,9 +12,6 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
   .aggregate(ganttImproved)
   .dependsOn(ganttImproved)
 
-
-val circeVersion = "0.8.0"
-
 lazy val ganttImproved = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .settings(CommonSettings.publishSettings)
@@ -24,13 +21,9 @@ lazy val ganttImproved = crossProject(JSPlatform, JVMPlatform)
   .settings(CommonSettings.defaultSettings)
   .jvmSettings(
       libraryDependencies ++= Seq(
+          "com.simplesys.core" %% "circe-extender" % "1.5-SNAPSHOT",
           "org.scalatest" %% "scalatest" % "3.0.4" % Test
-      ),
-      libraryDependencies ++= Seq(
-        "io.circe" %% "circe-core",
-        "io.circe" %% "circe-generic",
-        "io.circe" %% "circe-parser"
-      ).map(_ % circeVersion % Test)
+      )
   )
   .jsSettings(
       crossTarget in fastOptJS := (sourceDirectory in Compile).value / "javascriptJS",
