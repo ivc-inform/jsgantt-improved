@@ -1,6 +1,6 @@
 package com.simplesys.gantt
 
-import language.implicitConversions
+import scala.language.implicitConversions
 
 object Enabling extends Enumeration {
     type Enabling = Value
