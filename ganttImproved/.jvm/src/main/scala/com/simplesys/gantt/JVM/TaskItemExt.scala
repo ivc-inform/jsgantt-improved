@@ -11,7 +11,7 @@ import com.simplesys.gantt.TaskCssClass.TaskCssClass
 import io.circe.java8.time._
 import io.circe.{Decoder, Encoder}
 
-object TaskItemExtJVM {
+object TaskItemExt {
     implicit final val decodeLocalDateTimeDefault: Decoder[LocalDateTime] = decodeLocalDateTime(SS_LOCAL_DATE_TIME)
     implicit final val encodeLocalDateTimeDefault: Encoder[LocalDateTime] = encodeLocalDateTime(SS_LOCAL_DATE_TIME)
 
@@ -31,7 +31,7 @@ object TaskItemExtJVM {
     implicit val dependEnEncoder: Encoder[DependEn.Value] = Encoder.enumEncoder(DependEn)
 }
 
-case class TaskItemExtJVM(
+case class TaskItemExt(
                         pID: Long,
                         pName: String,
                         pStart: Option[LocalDateTime] = None,
