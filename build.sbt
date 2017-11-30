@@ -12,16 +12,21 @@ lazy val root = crossProject(JSPlatform, JVMPlatform)
   .aggregate(ganttImproved)
   .dependsOn(ganttImproved)
 
+val sysCirceExtenderVersion = "1.5-SNAPSHOT"
 lazy val ganttImproved = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .settings(CommonSettings.publishSettings)
   .settings(
-      name := "jsgantt-improved"
+      name := "jsgantt-improved",
+      libraryDependencies ++= Seq(
+          "com.simplesys.core" %% "circe-extender" % sysCirceExtenderVersion,
+          "org.scalatest" %% "scalatest" % "3.0.4" % Test
+      )
   )
   .settings(CommonSettings.defaultSettings)
   .jvmSettings(
       libraryDependencies ++= Seq(
-          "com.simplesys.core" %% "circe-extender" % "1.5-SNAPSHOT",
+          "com.simplesys.core" %% "circe-extender" % sysCirceExtenderVersion,
           "org.scalatest" %% "scalatest" % "3.0.4" % Test
       )
   )
