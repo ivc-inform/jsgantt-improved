@@ -1,4 +1,4 @@
-package com.simplesys.gantt.JVM
+package com.simplesys.gantt
 
 import java.time.LocalDateTime
 
@@ -6,7 +6,6 @@ import com.simplesys.common.Time._
 import com.simplesys.gantt.Group.Group
 import com.simplesys.gantt.MileStone.MileStone
 import com.simplesys.gantt.Opening.Opening
-import com.simplesys.gantt._
 import com.simplesys.gantt.TaskCssClass.TaskCssClass
 import io.circe.java8.time._
 import io.circe.{Decoder, Encoder}

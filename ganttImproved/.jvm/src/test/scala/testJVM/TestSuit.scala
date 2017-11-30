@@ -1,7 +1,6 @@
 package testJVM
 
-import com.simplesys.gantt.Group
-import com.simplesys.gantt.JVM.TaskItemExt
+import com.simplesys.gantt.{Group, TaskItemExt}
 import io.circe.generic.auto._
 import io.circe.syntax._
 import org.scalatest.FunSuite
