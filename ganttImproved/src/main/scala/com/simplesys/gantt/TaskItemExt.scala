@@ -24,7 +24,7 @@ object TaskItemExt {
 }
 
 case class TaskItemExt(
-                        pID: Long,
+                        pID: Double,
                         pName: String,
                         pStart: Option[String] = None,
                         pEnd: Option[String] = None,

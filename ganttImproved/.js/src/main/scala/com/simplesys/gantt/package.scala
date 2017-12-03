@@ -6,7 +6,7 @@ import com.simplesys.gantt.JS.GanttChart._
 package object gantt {
   implicit def taskItem2JS(ti:TaskItemExt)(implicit pGantt: GanttChartExt):TaskItemExtJS = new TaskItemExtJS(
     pLink = ti.pLink.map(Link(_)).getOrElse(Link()),
-    pID = ti.pID.toDouble,
+    pID = ti.pID,
     pGroup = ti.pGroup.getOrElse(Group.normalTask),
     pName = ti.pName,
     pOpen = ti.pOpen.getOrElse(Opening.open),
