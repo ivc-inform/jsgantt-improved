@@ -32,7 +32,7 @@ case class TaskItemExt(
                         pLink: Option[String] = None,
                         pMile: Option[MileStone] = None,
                         pRes: Option[String] = None,
-                        pComp: Option[Int] = None,
+                        pComp: Option[Double] = None,
                         pGroup: Option[Group] = None,
                         pParent: Option[Long] = None,
                         pOpen: Option[Opening] = None,

@@ -10,7 +10,7 @@ package object gantt {
     pGroup = ti.pGroup.getOrElse(Group.normalTask),
     pName = ti.pName,
     pOpen = ti.pOpen.getOrElse(Opening.open),
-    pComp = ti.pComp.getOrElse(0),
+    pComp = ti.pComp.getOrElse(0.0),
     pRes = ti.pRes.getOrElse(""),
     pClass = ti.pClass,
     pMile = ti.pMile.getOrElse(MileStone.notMilestone),
