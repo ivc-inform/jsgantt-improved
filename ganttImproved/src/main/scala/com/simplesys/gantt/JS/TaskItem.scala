@@ -51,25 +51,25 @@ object TaskItem {
 @js.native
 @JSGlobal("JSGantt.TaskItem")
 class TaskItem(
-                val pID: Int,
+                val pID: Double,
                 val pName: String,
                 val pStart: String | js.Date,
                 val pEnd: String | js.Date,
                 val pClass: String,
                 val pLink: String,
-                val pMile: Int,
+                val pMile: Double,
                 val pRes: String,
-                val pComp: Int,
-                val pGroup: Int,
-                val pParent: Int,
-                val pOpen: Int,
+                val pComp: Double,
+                val pGroup: Double,
+                val pParent: Double,
+                val pOpen: Double,
                 val pDepend: String,
                 val pCaption: String, val pNotes: String,
                 val pGantt: GanttChart
               ) extends js.Object
 
 class TaskItemExt(
-                   pID: Int,
+                   pID: Double,
                    pName: String,
                    pStart: Option[js.Date] = None,
                    pEnd: Option[js.Date] = None,
@@ -77,14 +77,14 @@ class TaskItemExt(
                    pLink: Link = Link(),
                    pMile: MileStone = MileStone.notMilestone,
                    pRes: String = "",
-                   pComp: Int = 0,
+                   pComp: Double = 0,
                    pGroup: Group = Group.normalTask,
-                   pParentID: Int = 0,
+                   pParentID: Double = 0,
                    pOpen: Opening = Opening.open,
                    pDepend: Seq[Depend] = Seq(),
                    pCaption: String = "",
                    pNotes: String = ""
-                 )(implicit pGantt: GanttChart) extends TaskItem(
+                 )(implicit pGantt: GanttChartExt) extends TaskItem(
     pID = pID,
     pName = pName,
     pStart = if (pStart.isDefined) pStart.get else "",

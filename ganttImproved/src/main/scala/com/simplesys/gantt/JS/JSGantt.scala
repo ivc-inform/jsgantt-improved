@@ -341,5 +341,4 @@ protected class GanttChart(val pDiv: Element, val pFormat: String) extends js.Ob
     def Draw(): Unit = js.native
 }
 
-class GanttChartExt(pDiv: Element, pFormat: Format) extends GanttChart(pDiv, pFormat.toString) {
-}
+class GanttChartExt(pDiv: Element, pFormat: Format) extends GanttChart(pDiv, pFormat.toString)

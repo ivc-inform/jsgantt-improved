@@ -36,7 +36,7 @@ case class TaskItemExt(
                         pGroup: Option[Group] = None,
                         pParent: Option[Long] = None,
                         pOpen: Option[Opening] = None,
-                        pDepend: Option[Depend] = None,
+                        pDepend: Option[Seq[Depend]] = None,
                         pCaption: Option[String] = None,
                         pNotes: Option[String] = None
                       )
