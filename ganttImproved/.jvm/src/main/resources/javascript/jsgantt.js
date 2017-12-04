@@ -1435,10 +1435,7 @@ JSGantt.GanttChart = function (pDiv, pFormat) {
 
             if (!vSingleCell) vTmpTBody.appendChild(vDateRow.cloneNode(true));
 
-            //<editor-fold desc="Fixed by Y.Andrew">
-            if (vDiv)
-                while (vDiv.hasChildNodes()) vDiv.removeChild(vDiv.firstChild);
-            //</editor-fold>
+            while (vDiv.hasChildNodes()) vDiv.removeChild(vDiv.firstChild);
 
             vTmpDiv = this.newNode(vDiv, 'div', null, 'gchartcontainer');
             vTmpDiv.appendChild(vLeftHeader);
