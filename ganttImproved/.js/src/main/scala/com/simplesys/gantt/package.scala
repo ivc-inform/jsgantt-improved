@@ -10,7 +10,7 @@ package object gantt {
     pGroup = ti.pGroup.getOrElse(Group.normalTask),
     pName = ti.pName,
     pOpen = ti.pOpen.getOrElse(Opening.open),
-    pComp = ti.pComp.getOrElse(0.0),
+    pComp = ti.pComp.map(_.toDouble).getOrElse(0.0),
     pRes = ti.pRes.getOrElse(""),
     pClass = ti.pClass,
     pMile = ti.pMile.getOrElse(MileStone.notMilestone),
@@ -18,7 +18,7 @@ package object gantt {
     pParentID = ti.pParent.map(_.toDouble).getOrElse(0.0),
     pStart = ti.pStart.map(_.toLDT),
     pEnd = ti.pEnd.map(_.toLDT),
-    pDepend = ti.pDepend.getOrElse(Seq()),
+    pDepend = ti.pDepend,
     pCaption = ti.pCaption.getOrElse("")
   )
 }

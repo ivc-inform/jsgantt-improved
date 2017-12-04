@@ -24,7 +24,7 @@ object TaskItemExt {
 }
 
 case class TaskItemExt(
-                        pID: Double,
+                        pID: Long,
                         pName: String,
                         pStart: Option[String] = None,
                         pEnd: Option[String] = None,
@@ -32,11 +32,11 @@ case class TaskItemExt(
                         pLink: Option[String] = None,
                         pMile: Option[MileStone] = None,
                         pRes: Option[String] = None,
-                        pComp: Option[Double] = None,
+                        pComp: Option[Long] = None,
                         pGroup: Option[Group] = None,
                         pParent: Option[Long] = None,
                         pOpen: Option[Opening] = None,
-                        pDepend: Option[Seq[Depend]] = None,
+                        pDepend: Seq[Depend] = Seq.empty,
                         pCaption: Option[String] = None,
                         pNotes: Option[String] = None
                       )
