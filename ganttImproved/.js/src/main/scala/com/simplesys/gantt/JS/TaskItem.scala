@@ -105,5 +105,9 @@ class TaskItemExt(
     pCaption = pCaption,
     pNotes = pNotes,
     pGantt = pGantt
-)
+
+
+) {
+    override def toString: String = s"{pID: $pID, pName: $pName, pStart: $pStart, pEnd: $pEnd: pClass: $pClass, pLink: ${pLink.httpLink}, pMile: $pMile, pRes: $pRes, pComp: $pComp, pGroup: $pGroup, pParent: $pParentID, pOpen: $pOpen, pDepend: ${pDepend.toString}, pCaption: $pCaption, pNotes: $pNotes}"
+}
 
